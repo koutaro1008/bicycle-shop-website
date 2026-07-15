@@ -900,6 +900,22 @@
       background: rgba(255,255,255,0.08);
     }
 
+    .mobility-model-image {
+      display: grid;
+      min-height: 150px;
+      margin-bottom: 14px;
+      padding: 12px;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.92);
+    }
+
+    .mobility-model-image img {
+      width: 100%;
+      max-height: 130px;
+      object-fit: contain;
+    }
+
     .mobility-model span {
       display: block;
       color: rgba(255,255,255,0.72);
@@ -913,6 +929,13 @@
       display: block;
       margin-top: 6px;
       font-size: 1.1rem;
+    }
+
+    .mobility-model p {
+      margin: 8px 0 0;
+      color: rgba(255,255,255,0.84);
+      font-size: 0.92rem;
+      line-height: 1.6;
     }
 
     /* Payments */
@@ -1382,9 +1405,9 @@
             <span data-ja="1936年から。" data-en="since 1936.">1936年から。</span>
           </h1>
           <p class="hero-lead"
-             data-ja="自転車の販売・修理から、出張修理、自転車洗車、レンタサイクルまで。地域に根差した自転車店として、毎日の移動を支えます。"
-             data-en="From bicycle sales and repairs to on-site service, professional bike cleaning and rentals, we support everyday mobility in the local community.">
-            自転車の販売・修理から、出張修理、自転車洗車、レンタサイクルまで。地域に根差した自転車店として、毎日の移動を支えます。
+             data-ja="自転車の販売・修理を中心に、出張修理、自転車洗車、レンタサイクル、特定小型モビリティまで。十三で90年、地域の移動を支えてきた自転車店です。"
+             data-en="From bicycle sales and repairs to on-site service, professional cleaning, rentals and specified small mobility, we have supported everyday transportation in Juso for 90 years.">
+            自転車の販売・修理を中心に、出張修理、自転車洗車、レンタサイクル、特定小型モビリティまで。十三で90年、地域の移動を支えてきた自転車店です。
           </p>
 
           <div class="english-support"
@@ -1442,9 +1465,9 @@
           <div class="about-copy">
             <h3 data-ja="創業1936年。十三の街とともに。" data-en="Established in 1936, serving Juso ever since.">創業1936年。十三の街とともに。</h3>
             <p
-              data-ja="自転車や特定小型原動機付自転車の販売・修理・メンテナンスを行っています。日常使いの自転車から電動アシスト自転車、スポーツ車まで、お困りごとをお気軽にご相談ください。"
-              data-en="We provide sales, repairs and maintenance for bicycles and specified small motorized bicycles. Please contact us about city bikes, electric-assist bicycles, sports bikes and more.">
-              自転車や特定小型原動機付自転車の販売・修理・メンテナンスを行っています。日常使いの自転車から電動アシスト自転車、スポーツ車まで、お困りごとをお気軽にご相談ください。
+              data-ja="一般車、電動アシスト自転車、スポーツ車、特定小型原動機付自転車まで、販売・修理・点検・メンテナンスに対応しています。購入前の相談から、購入後の修理や部品交換まで、地域の自転車店として長く安心してお付き合いいただけます。"
+              data-en="We sell, repair and maintain city bicycles, electric-assist bicycles, sports bikes and specified small motorized bicycles. From choosing a model to repairs and parts replacement after purchase, we provide long-term local support.">
+              一般車、電動アシスト自転車、スポーツ車、特定小型原動機付自転車まで、販売・修理・点検・メンテナンスに対応しています。購入前の相談から、購入後の修理や部品交換まで、地域の自転車店として長く安心してお付き合いいただけます。
             </p>
 
             <div class="strengths">
@@ -1476,7 +1499,7 @@
           <div class="section-number">02</div>
           <div>
             <h2 data-ja="サービス" data-en="Services">サービス</h2>
-            <p data-ja="自転車に関するさまざまなお困りごとに対応します" data-en="Practical support for your bicycle needs">自転車に関するさまざまなお困りごとに対応します</p>
+            <p data-ja="日常の故障対応から、洗車・レンタルまで幅広くサポートします" data-en="Support ranging from everyday repairs to professional cleaning and rentals">日常の故障対応から、洗車・レンタルまで幅広くサポートします</p>
           </div>
         </div>
 
@@ -1582,7 +1605,7 @@
           <div class="section-number">03</div>
           <div>
             <h2 data-ja="販売・修理ラインナップ" data-en="Sales and repair lineup">販売・修理ラインナップ</h2>
-            <p data-ja="自転車選びから修理・点検まで幅広く対応します" data-en="A broad range of bicycles, repairs and inspections">自転車選びから修理・点検まで幅広く対応します</p>
+            <p data-ja="用途に合った一台選びから、修理・点検・部品交換までお任せください" data-en="From choosing the right bicycle to inspections, repairs and parts replacement">用途に合った一台選びから、修理・点検・部品交換までお任せください</p>
           </div>
         </div>
 
@@ -1625,8 +1648,8 @@
               <span class="product-category" data-ja="電動アシスト自転車" data-en="Electric-assist bicycle">電動アシスト自転車</span>
               <h4>ビビ・DX</h4>
               <ul class="product-detail-list">
-                <li data-ja="16.0Ahの大容量バッテリーを備えた、買い物や日常利用向けの定番モデル" data-en="A popular everyday model with a large 16.0Ah battery, suited to shopping and daily use">16.0Ahの大容量バッテリーを備えた、買い物や日常利用向けの定番モデル</li>
-                <li data-ja="24型・26型を展開し、パワーモードで約59km、ロングモードで約107km走行" data-en="Available in 24-inch and 26-inch sizes, with approximately 59 km in Power mode and 107 km in Long mode">24型・26型を展開し、パワーモードで約59km、ロングモードで約107km走行</li>
+                <li data-ja="大容量16.0Ahバッテリーと実用装備を備えた、買い物や毎日の移動に使いやすい電動アシスト自転車です。" data-en="An electric-assist bicycle with a large 16.0Ah battery and practical equipment, designed for shopping and everyday travel.">大容量16.0Ahバッテリーと実用装備を備えた、買い物や毎日の移動に使いやすい電動アシスト自転車です。</li>
+                <li data-ja="24型・26型を展開。パワーモード約59km、オートマチック約70km、ロングモード約107kmの走行が目安です。" data-en="Available in 24-inch and 26-inch sizes, with approximate ranges of 59 km in Power mode, 70 km in Automatic mode and 107 km in Long mode.">24型・26型を展開。パワーモード約59km、オートマチック約70km、ロングモード約107kmの走行が目安です。</li>
               </ul>
               <div class="product-placeholder" data-ja="大容量バッテリーと充実した標準装備を重視する方におすすめです。" data-en="Recommended for riders who value long battery range and practical standard equipment.">
                 大容量バッテリーと充実した標準装備を重視する方におすすめです。
@@ -1642,7 +1665,7 @@
               <span class="product-category" data-ja="コンパクトモデル" data-en="Compact model">コンパクトモデル</span>
               <h4>MU</h4>
               <ul class="product-detail-list">
-                <li data-ja="スロットルを回すだけで、ペダルをこがずに走行できる着座式の特定小型原動機付自転車" data-en="A seated specified small motorized bicycle that moves by turning the throttle, without pedalling">スロットルを回すだけで、ペダルをこがずに走行できる着座式の特定小型原動機付自転車</li>
+                <li data-ja="スロットル操作だけで走行できる、着座式の特定小型原動機付自転車です。20インチタイヤによる安定感と、坂道での力強い走りが特長です。" data-en="A seated specified small motorized bicycle operated by throttle, featuring stable 20-inch tyres and confident hill-climbing performance.">スロットル操作だけで走行できる、着座式の特定小型原動機付自転車です。20インチタイヤによる安定感と、坂道での力強い走りが特長です。</li>
                 <li data-ja="16.0Ahバッテリーと実用的な標準装備" data-en="16.0Ah battery and practical standard equipment">16.0Ahバッテリーと実用的な標準装備</li>
               </ul>
               <div class="product-placeholder"
@@ -1661,8 +1684,8 @@
               <span class="product-category" data-ja="特定小型モビリティ" data-en="Specified small mobility">特定小型モビリティ</span>
               <h4>RICHBIT CITY</h4>
               <ul class="product-detail-list">
-                <li data-ja="約16kgの軽量設計で、折りたたんで持ち運びや収納がしやすい特定小型原動機付自転車" data-en="A lightweight specified small motorized bicycle weighing about 16 kg, designed for folding, carrying and storage">約16kgの軽量設計で、折りたたんで持ち運びや収納がしやすい特定小型原動機付自転車</li>
-                <li data-ja="16.0Ahバッテリーを搭載したコンパクトな車体" data-en="Compact body equipped with a 16.0Ah battery">16.0Ahバッテリーを搭載したコンパクトな車体</li>
+                <li data-ja="約16kgの軽量・折りたたみ設計で、持ち運びや省スペース収納に向いた特定小型原動機付自転車です。" data-en="A lightweight specified small motorized bicycle of about 16 kg, designed to fold for easier carrying and compact storage.">約16kgの軽量・折りたたみ設計で、持ち運びや省スペース収納に向いた特定小型原動機付自転車です。</li>
+                <li data-ja="質量24kg、1充電あたり約40km。全長1,610mmで、近距離の通勤・買い物・駅までの移動に適しています。" data-en="It weighs 24 kg, offers an approximate range of 40 km per charge and measures 1,610 mm in length, making it suitable for short commutes, shopping and station access.">質量24kg、1充電あたり約40km。全長1,610mmで、近距離の通勤・買い物・駅までの移動に適しています。</li>
               </ul>
               <div class="product-placeholder" data-ja="自転車型の乗りやすさと電動走行を組み合わせ、取り外し可能なバッテリーを採用しています。" data-en="It combines bicycle-style handling with electric mobility and uses a removable battery.">
                 自転車型の乗りやすさと電動走行を組み合わせ、取り外し可能なバッテリーを採用しています。
@@ -1678,8 +1701,8 @@
               <span class="product-category" data-ja="特定小型モビリティ" data-en="Specified small mobility">特定小型モビリティ</span>
               <h4>EVEREST XING CITY</h4>
               <ul class="product-detail-list">
-                <li data-ja="500Wモーターと48Vバッテリーを搭載した、自転車型の特定小型原動機付自転車" data-en="A bicycle-style specified small motorized bicycle equipped with a 500 W motor and 48 V battery">500Wモーターと48Vバッテリーを搭載した、自転車型の特定小型原動機付自転車</li>
-                <li data-ja="折りたたみ可能で、4色のカラーバリエーション" data-en="Foldable design with four colour options">折りたたみ可能で、4色のカラーバリエーション</li>
+                <li data-ja="500Wモーターと48V・13.2Ahバッテリーを搭載した、自転車型の特定小型原動機付自転車です。" data-en="A bicycle-style specified small motorized bicycle equipped with a 500 W motor and a 48 V, 13.2Ah battery.">500Wモーターと48V・13.2Ahバッテリーを搭載した、自転車型の特定小型原動機付自転車です。</li>
+                <li data-ja="一充電走行距離は約30〜40km。車道モード20km/h、歩道モード6km/hに対応します。" data-en="Approximate range per charge is 30–40 km, with a 20 km/h roadway mode and 6 km/h pavement mode.">一充電走行距離は約30〜40km。車道モード20km/h、歩道モード6km/hに対応します。</li>
               </ul>
               <div class="product-placeholder" data-ja="車道モード20km/hに対応し、近距離の移動を快適にすることを重視したモデルです。" data-en="Designed for convenient short-distance travel, with a roadway mode of up to 20 km/h.">
                 車道モード20km/hに対応し、近距離の移動を快適にすることを重視したモデルです。
@@ -1716,9 +1739,9 @@
             </h3>
 
             <p
-              data-ja="特定小型モビリティは、通勤、買い物、駅までの移動など、街中の短距離移動を快適にする新しい選択肢です。購入を決めていなくても、気軽に試乗していただけます。"
-              data-en="Specified small mobility vehicles offer a convenient new option for short urban trips such as commuting, shopping and travelling to the station. You are welcome to take a test ride even if you have not decided to buy.">
-              特定小型モビリティは、通勤、買い物、駅までの移動など、街中の短距離移動を快適にする新しい選択肢です。購入を決めていなくても、気軽に試乗していただけます。
+              data-ja="特定小型原動機付自転車は、スロットル操作で走行する電動モビリティです。16歳以上であれば運転免許は不要ですが、ナンバープレートの取得と自賠責保険への加入が必要です。通勤、買い物、駅までの移動など、3〜5km程度の近距離移動をより手軽にします。購入を決めていなくても、試乗だけでお気軽にご来店ください。"
+              data-en="Specified small motorized bicycles are electric mobility vehicles operated by throttle. Riders aged 16 or older do not need a driving licence, but a number plate and compulsory liability insurance are required. They are well suited to short journeys of around 3–5 km, such as commuting, shopping and trips to the station. Test rides are welcome even if you have not decided to buy.">
+              特定小型原動機付自転車は、スロットル操作で走行する電動モビリティです。16歳以上であれば運転免許は不要ですが、ナンバープレートの取得と自賠責保険への加入が必要です。通勤、買い物、駅までの移動など、3〜5km程度の近距離移動をより手軽にします。購入を決めていなくても、試乗だけでお気軽にご来店ください。
             </p>
 
             <div class="test-ride-box">
@@ -1781,16 +1804,40 @@
 
         <div class="mobility-models">
           <div class="mobility-model">
+            <div class="mobility-model-image">
+              <img src="images/product-mu.png" alt="MU">
+            </div>
             <span>Panasonic</span>
             <strong>MU</strong>
+            <p
+              data-ja="20インチタイヤで安定感があり、坂道にも強い着座式モデル。"
+              data-en="A seated model with stable 20-inch tyres and confident hill-climbing performance.">
+              20インチタイヤで安定感があり、坂道にも強い着座式モデル。
+            </p>
           </div>
           <div class="mobility-model">
+            <div class="mobility-model-image">
+              <img src="images/product-richbit-city.png" alt="RICHBIT CITY">
+            </div>
             <span>RICHBIT</span>
             <strong>RICHBIT CITY</strong>
+            <p
+              data-ja="約16kgの軽量・折りたたみ設計で、持ち運びや収納に便利なモデル。"
+              data-en="A lightweight, foldable model of about 16 kg, convenient for carrying and storage.">
+              約16kgの軽量・折りたたみ設計で、持ち運びや収納に便利なモデル。
+            </p>
           </div>
           <div class="mobility-model">
+            <div class="mobility-model-image">
+              <img src="images/product-everest-xing-city.png" alt="EVEREST XING CITY">
+            </div>
             <span>EVEREST XING</span>
             <strong>EVEREST XING CITY</strong>
+            <p
+              data-ja="500Wモーターと約60kmの航続距離を備えた、力強い自転車型モデル。"
+              data-en="A powerful bicycle-style model with a 500 W motor and an approximate 60 km range.">
+              500Wモーターと約60kmの航続距離を備えた、力強い自転車型モデル。
+            </p>
           </div>
         </div>
       </div>
