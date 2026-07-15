@@ -777,6 +777,143 @@
       font-size: 0.9rem;
     }
 
+
+    /* Specified small mobility promotion */
+    .mobility-feature {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(255,255,255,0.14), transparent 24%),
+        linear-gradient(135deg, var(--blue-dark), var(--blue));
+    }
+
+    .mobility-feature::before {
+      position: absolute;
+      top: -120px;
+      right: -90px;
+      width: 360px;
+      height: 360px;
+      border: 36px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .mobility-feature .section-number {
+      color: var(--blue);
+      background: #fff;
+    }
+
+    .mobility-feature .section-heading p {
+      color: rgba(255,255,255,0.76);
+    }
+
+    .mobility-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .mobility-copy h3 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 4.8vw, 4.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .mobility-copy p {
+      margin: 0 0 16px;
+      color: rgba(255,255,255,0.86);
+      font-size: 1.05rem;
+    }
+
+    .test-ride-box {
+      margin-top: 26px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.10);
+      backdrop-filter: blur(8px);
+    }
+
+    .test-ride-box strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+    }
+
+    .mobility-benefits {
+      display: grid;
+      gap: 14px;
+    }
+
+    .mobility-benefit {
+      padding: 20px;
+      border-radius: 18px;
+      background: #fff;
+      color: var(--ink);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
+
+    .mobility-benefit strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--blue);
+      font-size: 1.05rem;
+    }
+
+    .mobility-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .mobility-actions .button-primary {
+      color: var(--blue-dark);
+      border-color: #fff;
+      background: #fff;
+    }
+
+    .mobility-actions .button-secondary {
+      color: #fff;
+      border-color: rgba(255,255,255,0.65);
+      background: transparent;
+    }
+
+    .mobility-models {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 38px;
+    }
+
+    .mobility-model {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .mobility-model span {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mobility-model strong {
+      display: block;
+      margin-top: 6px;
+      font-size: 1.1rem;
+    }
+
     /* Payments */
     .payment-grid {
       display: grid;
@@ -1048,6 +1185,7 @@
 
       .hero-grid,
       .about-grid,
+      .mobility-grid,
       .access-grid,
       .contact-grid {
         grid-template-columns: 1fr;
@@ -1143,6 +1281,7 @@
       .strengths,
       .lineup-grid,
       .product-grid,
+      .mobility-models,
       .payment-grid,
       .price-grid,
       .link-cards {
@@ -1213,6 +1352,7 @@
             <li><a href="#about" data-ja="店舗紹介" data-en="About">店舗紹介</a></li>
             <li><a href="#services" data-ja="サービス" data-en="Services">サービス</a></li>
             <li><a href="#lineup" data-ja="販売・修理" data-en="Sales & Repairs">販売・修理</a></li>
+            <li><a href="#mobility" data-ja="特定小型" data-en="Mobility">特定小型</a></li>
             <li><a href="#payment" data-ja="お支払い" data-en="Payment">お支払い</a></li>
             <li><a href="#access" data-ja="アクセス" data-en="Access">アクセス</a></li>
             <li><a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a></li>
@@ -1348,19 +1488,19 @@
               <span class="service-tag">On-site repair</span>
               <h3 data-ja="出張修理サービス" data-en="On-site repair service">出張修理サービス</h3>
               <p
-                data-ja="大阪市内の指定地域へ伺い、鍵交換、チェーン切れ、パンク修理などに対応します。現地で修理できない場合は、引き取り修理を行います。"
-                data-en="We visit designated areas within Osaka City for services such as lock replacement, broken chains and puncture repairs. If repair on site is not possible, we can collect the bicycle for repair.">
-                大阪市内の指定地域へ伺い、鍵交換、チェーン切れ、パンク修理などに対応します。現地で修理できない場合は、引き取り修理を行います。
+                data-ja="指定地域にて出張修理を承ります。鍵交換、チェーン切れ、パンク修理、その他の修理に対応します。出張先で修理できない場合は、自転車を引き取り、店舗で修理します。"
+                data-en="We provide on-site bicycle repair in designated areas. Services include lock replacement, broken chains, puncture repairs and other repairs. If the bicycle cannot be repaired on site, we will collect it and repair it at our shop.">
+                指定地域にて出張修理を承ります。鍵交換、チェーン切れ、パンク修理、その他の修理に対応します。出張先で修理できない場合は、自転車を引き取り、店舗で修理します。
               </p>
               <ul class="service-list">
-                <li data-ja="対応地域：大阪市内" data-en="Service area: Osaka City">対応地域：大阪市内</li>
-                <li data-ja="ご自宅または職場で対応" data-en="Service at your home or workplace">ご自宅または職場で対応</li>
-                <li data-ja="受付はお電話で承ります" data-en="Please request service by phone">受付はお電話で承ります</li>
+                <li data-ja="修理は職場またはご自宅で実施します" data-en="Repairs are carried out only at your workplace or home">修理は職場またはご自宅で実施します</li>
+                <li data-ja="出張先で修理できない場合は引き取り修理を行います" data-en="If on-site repair is not possible, we will collect the bicycle for repair">出張先で修理できない場合は引き取り修理を行います</li>
+                <li data-ja="まずはお電話でお気軽にお問い合わせください" data-en="Please call us first to discuss your repair">まずはお電話でお気軽にお問い合わせください</li>
               </ul>
               <div class="highlight"
-                   data-ja="当店発行のサービス証がある自転車は、市内の出張・引き取り料金無料です（修理費用別途）。"
-                   data-en="Bicycles with our service certificate qualify for free dispatch or collection within Osaka City. Repair charges apply separately.">
-                当店発行のサービス証がある自転車は、市内の出張・引き取り料金無料です（修理費用別途）。
+                   data-ja="当店発行のサービス証がある自転車は、大阪市内の出張・引き取りサービス料金が無料です（修理費用は別途）。"
+                   data-en="For bicycles with a service certificate issued by our shop, dispatch and collection service within Osaka City is free. Repair charges apply separately.">
+                当店発行のサービス証がある自転車は、大阪市内の出張・引き取りサービス料金が無料です（修理費用は別途）。
               </div>
             </div>
           </article>
@@ -1557,10 +1697,102 @@
       </div>
     </section>
 
-    <section class="section" id="payment">
+    <section class="section mobility-feature" id="mobility">
       <div class="container">
         <div class="section-heading">
           <div class="section-number">04</div>
+          <div>
+            <h2 data-ja="特定小型モビリティ特集" data-en="Specified Small Mobility">特定小型モビリティ特集</h2>
+            <p data-ja="近距離の移動を、もっと手軽に" data-en="A simpler way to travel short distances">近距離の移動を、もっと手軽に</p>
+          </div>
+        </div>
+
+        <div class="mobility-grid">
+          <div class="mobility-copy">
+            <p class="eyebrow" style="color:#fff;">NEW MOBILITY</p>
+            <h3
+              data-ja="まずは乗って、違いを体感。試乗だけでもお気軽に。"
+              data-en="Try it before you decide. Test rides are always welcome.">
+              まずは乗って、違いを体感。試乗だけでもお気軽に。
+            </h3>
+
+            <p
+              data-ja="特定小型モビリティは、通勤、買い物、駅までの移動など、街中の短距離移動を快適にする新しい選択肢です。購入を決めていなくても、気軽に試乗していただけます。"
+              data-en="Specified small mobility vehicles offer a convenient new option for short urban trips such as commuting, shopping and travelling to the station. You are welcome to take a test ride even if you have not decided to buy.">
+              特定小型モビリティは、通勤、買い物、駅までの移動など、街中の短距離移動を快適にする新しい選択肢です。購入を決めていなくても、気軽に試乗していただけます。
+            </p>
+
+            <div class="test-ride-box">
+              <strong
+                data-ja="試乗だけでも歓迎します"
+                data-en="Test rides are welcome">
+                試乗だけでも歓迎します
+              </strong>
+              <p
+                data-ja="操作方法や乗り心地、モデルごとの違いをスタッフが分かりやすくご案内します。英語対応可能なスタッフも在籍しています。"
+                data-en="Our staff will explain how to operate each model and help you compare the riding experience. English-speaking staff are available.">
+                操作方法や乗り心地、モデルごとの違いをスタッフが分かりやすくご案内します。英語対応可能なスタッフも在籍しています。
+              </p>
+            </div>
+
+            <div class="mobility-actions">
+              <a class="button button-primary" href="tel:0663014000"
+                 data-ja="試乗について電話で相談"
+                 data-en="Ask about a test ride">
+                試乗について電話で相談
+              </a>
+              <a class="button button-secondary" href="#access"
+                 data-ja="店舗で実車を見る"
+                 data-en="Visit us to see the models">
+                店舗で実車を見る
+              </a>
+            </div>
+          </div>
+
+          <div class="mobility-benefits">
+            <div class="mobility-benefit">
+              <strong data-ja="購入前に実車を確認" data-en="See the actual model before buying">購入前に実車を確認</strong>
+              <span data-ja="サイズ感、操作性、乗り心地を試乗で確認できます。" data-en="Check the size, controls and ride quality through a test ride.">サイズ感、操作性、乗り心地を試乗で確認できます。</span>
+            </div>
+
+            <div class="mobility-benefit">
+              <strong data-ja="車種選びを相談" data-en="Get help choosing a model">車種選びを相談</strong>
+              <span data-ja="用途や移動距離に合わせて、各モデルの違いをご案内します。" data-en="We explain the differences between models based on your needs and travel distance.">用途や移動距離に合わせて、各モデルの違いをご案内します。</span>
+            </div>
+
+            <div class="mobility-benefit">
+              <strong data-ja="購入後も安心" data-en="Support after purchase">購入後も安心</strong>
+              <span data-ja="販売だけでなく、点検、修理、部品交換、メンテナンスまで対応します。" data-en="We provide inspections, repairs, parts replacement and maintenance after purchase.">販売だけでなく、点検、修理、部品交換、メンテナンスまで対応します。</span>
+            </div>
+
+            <div class="mobility-benefit">
+              <strong data-ja="英語での案内にも対応" data-en="English assistance available">英語での案内にも対応</strong>
+              <span data-ja="英語対応可能なスタッフが、操作方法や購入相談をご案内します。" data-en="English-speaking staff can assist with operation guidance and purchase enquiries.">英語対応可能なスタッフが、操作方法や購入相談をご案内します。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mobility-models">
+          <div class="mobility-model">
+            <span>Panasonic</span>
+            <strong>MU</strong>
+          </div>
+          <div class="mobility-model">
+            <span>RICHBIT</span>
+            <strong>RICHBIT CITY</strong>
+          </div>
+          <div class="mobility-model">
+            <span>EVEREST XING</span>
+            <strong>EVEREST XING CITY</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="payment">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-number">05</div>
           <div>
             <h2 data-ja="お支払い方法" data-en="Payment methods">お支払い方法</h2>
             <p data-ja="現金・各種キャッシュレス決済をご利用いただけます" data-en="Cash and selected cashless payment methods are accepted">現金・各種キャッシュレス決済をご利用いただけます</p>
@@ -1587,7 +1819,7 @@
     <section class="section section-soft" id="access">
       <div class="container">
         <div class="section-heading">
-          <div class="section-number">05</div>
+          <div class="section-number">06</div>
           <div>
             <h2 data-ja="店舗情報・アクセス" data-en="Store information and access">店舗情報・アクセス</h2>
             <p data-ja="阪急十三駅西口から徒歩約3分" data-en="About a three-minute walk from the west exit of Juso Station">阪急十三駅西口から徒歩約3分</p>
