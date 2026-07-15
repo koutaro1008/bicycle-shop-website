@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="大阪・十三のサイクルショップカンバヤシ。1936年創業。自転車販売・修理、出張修理、自転車洗車、レンタサイクルに対応しています。">
   <meta name="theme-color" content="#173f86">
+  <link rel="icon" type="image/png" href="images/logo-main.png">
+  <link rel="apple-touch-icon" href="images/logo-main.png">
   <title>サイクルショップカンバヤシ｜大阪・十三の自転車店</title>
 
   <style>
@@ -338,6 +340,32 @@
       box-shadow: var(--shadow);
     }
 
+
+    .english-support {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+      padding: 11px 16px;
+      color: #fff;
+      border-radius: 999px;
+      background: var(--blue-dark);
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17, 38, 76, 0.18);
+    }
+
+    .english-support::before {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: 50%;
+      content: "EN";
+      color: var(--blue-dark);
+      background: #fff;
+      font-size: 0.7rem;
+    }
+
     /* Common sections */
     section {
       scroll-margin-top: 92px;
@@ -556,6 +584,197 @@
     .price-box strong {
       color: var(--blue);
       font-size: 1.3rem;
+    }
+
+
+    /* Opening message */
+    .opening-message {
+      padding: 42px 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
+        repeating-linear-gradient(
+          90deg,
+          #eee6db 0,
+          #eee6db 3px,
+          #f8f3ec 3px,
+          #f8f3ec 42px
+        );
+    }
+
+    .opening-lines {
+      display: grid;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .opening-lines li {
+      position: relative;
+      padding-left: 34px;
+      color: #0877c9;
+      font-size: clamp(1.25rem, 3vw, 2.35rem);
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .opening-lines li::before {
+      position: absolute;
+      top: 0.13em;
+      left: 0;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.16);
+      content: "▶";
+      font-size: 0.72em;
+    }
+
+    .legacy-copy {
+      max-width: 820px;
+      margin: 34px auto 0;
+      text-align: center;
+    }
+
+    .legacy-copy p {
+      margin: 6px 0;
+      font-size: clamp(1rem, 2.3vw, 1.65rem);
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    /* Sales and repair lineup */
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .lineup-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(17, 38, 76, 0.06);
+    }
+
+    .lineup-card h3 {
+      margin: 0 0 18px;
+      text-align: center;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+
+    .lineup-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lineup-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lineup-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .product-lineup-image {
+      margin-top: 28px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+    }
+
+    .product-lineup-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .lineup-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(17, 38, 76, 0.06);
+    }
+
+    .product-image {
+      display: grid;
+      min-height: 260px;
+      place-items: center;
+      padding: 18px;
+      background: #fafbfc;
+    }
+
+    .product-image img {
+      width: 100%;
+      max-height: 245px;
+      object-fit: contain;
+    }
+
+    .product-body {
+      padding: 24px;
+    }
+
+    .product-category {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .product-card h4 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+    }
+
+    .product-detail-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .product-detail-list li {
+      position: relative;
+      padding: 7px 0 7px 22px;
+      color: #484c52;
+    }
+
+    .product-detail-list li::before {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      color: var(--blue);
+      content: "•";
+      font-weight: 900;
+    }
+
+    .product-placeholder {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 1px dashed #b7c3d7;
+      border-radius: 12px;
+      color: var(--muted);
+      background: #f8faff;
+      font-size: 0.9rem;
     }
 
     /* Payments */
@@ -922,6 +1141,8 @@
       }
 
       .strengths,
+      .lineup-grid,
+      .product-grid,
       .payment-grid,
       .price-grid,
       .link-cards {
@@ -991,6 +1212,7 @@
           <ul class="nav-list" id="navList">
             <li><a href="#about" data-ja="店舗紹介" data-en="About">店舗紹介</a></li>
             <li><a href="#services" data-ja="サービス" data-en="Services">サービス</a></li>
+            <li><a href="#lineup" data-ja="販売・修理" data-en="Sales & Repairs">販売・修理</a></li>
             <li><a href="#payment" data-ja="お支払い" data-en="Payment">お支払い</a></li>
             <li><a href="#access" data-ja="アクセス" data-en="Access">アクセス</a></li>
             <li><a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a></li>
@@ -1024,6 +1246,12 @@
             自転車の販売・修理から、出張修理、自転車洗車、レンタサイクルまで。地域に根差した自転車店として、毎日の移動を支えます。
           </p>
 
+          <div class="english-support"
+               data-ja="英語対応可能なスタッフが在籍しています"
+               data-en="English-speaking staff available">
+            英語対応可能なスタッフが在籍しています
+          </div>
+
           <div class="hero-actions">
             <a class="button button-primary" href="tel:0663014000" data-ja="電話で相談する" data-en="Call us">電話で相談する</a>
             <a class="button button-secondary" href="#access" data-ja="店舗へのアクセス" data-en="Get directions">店舗へのアクセス</a>
@@ -1033,6 +1261,24 @@
         <div class="hero-mark" aria-hidden="true">
           <img src="images/heading-name.png" alt="">
           <div class="hero-note" data-ja="阪急十三駅から徒歩約3分" data-en="About 3 min. from Juso Station">阪急十三駅から徒歩約3分</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="opening-message" aria-label="店舗メッセージ">
+      <div class="container">
+        <ul class="opening-lines">
+          <li data-ja="風を感じて、自由を走る" data-en="Feel the wind. Ride free.">風を感じて、自由を走る</li>
+          <li data-ja="風を感じて、ペダルを踏めば、爽快が広がる" data-en="Feel the wind, turn the pedals, and open up a refreshing ride.">風を感じて、ペダルを踏めば、爽快が広がる</li>
+          <li data-ja="風を切って走る、その幸福感をあなたに" data-en="We bring you the joy of riding through the wind.">風を切って走る、その幸福感をあなたに</li>
+        </ul>
+
+        <div class="legacy-copy">
+          <p data-ja="十三と共に90年" data-en="90 years together with Juso">十三と共に90年</p>
+          <p data-ja="信頼の自転車店・地域密着" data-en="A trusted bicycle shop rooted in the community">信頼の自転車店・地域密着</p>
+          <p data-ja="安心と信頼の老舗クオリティ" data-en="Established quality built on trust and peace of mind">安心と信頼の老舗クオリティ</p>
+          <p data-ja="世代を超えて受け継がれる品質と安心" data-en="Quality and reassurance carried across generations">世代を超えて受け継がれる品質と安心</p>
+          <p data-ja="長年の実績が語る、確かな一台" data-en="A dependable bicycle backed by decades of experience">長年の実績が語る、確かな一台</p>
         </div>
       </div>
     </section>
@@ -1189,10 +1435,132 @@
       </div>
     </section>
 
-    <section class="section" id="payment">
+    <section class="section" id="lineup">
       <div class="container">
         <div class="section-heading">
           <div class="section-number">03</div>
+          <div>
+            <h2 data-ja="販売・修理ラインナップ" data-en="Sales and repair lineup">販売・修理ラインナップ</h2>
+            <p data-ja="自転車選びから修理・点検まで幅広く対応します" data-en="A broad range of bicycles, repairs and inspections">自転車選びから修理・点検まで幅広く対応します</p>
+          </div>
+        </div>
+
+        <div class="lineup-grid">
+          <article class="lineup-card">
+            <h3 data-ja="自転車販売" data-en="Bicycle sales">自転車販売</h3>
+            <ul class="lineup-list">
+              <li data-ja="特定小型：Panasonic、Acalie、YADEA など" data-en="Specified small mobility: Panasonic, Acalie, YADEA and more">特定小型：Panasonic、Acalie、YADEA など</li>
+              <li data-ja="電動アシスト自転車：パナソニック、ブリヂストン、ヤマハ、アサヒ" data-en="Electric-assist bicycles: Panasonic, Bridgestone, Yamaha and Asahi">電動アシスト自転車：パナソニック、ブリヂストン、ヤマハ、アサヒ</li>
+              <li data-ja="シティサイクル：ブリヂストン、アサヒ、サカモトテクノ、ウェルビーサイクル、DAHON" data-en="City bicycles: Bridgestone, Asahi, Sakamoto Techno, Welby Cycle and DAHON">シティサイクル：ブリヂストン、アサヒ、サカモトテクノ、ウェルビーサイクル、DAHON</li>
+              <li data-ja="折り畳み自転車・小径車" data-en="Folding bicycles and compact-wheel bicycles">折り畳み自転車・小径車</li>
+              <li data-ja="クロスバイク" data-en="Cross bikes">クロスバイク</li>
+            </ul>
+          </article>
+
+          <article class="lineup-card">
+            <h3 data-ja="自転車修理" data-en="Bicycle repairs">自転車修理</h3>
+            <ul class="lineup-list">
+              <li data-ja="定期点検" data-en="Routine inspections">定期点検</li>
+              <li data-ja="パンク修理" data-en="Puncture repairs">パンク修理</li>
+              <li data-ja="タイヤ・チューブ交換" data-en="Tyre and tube replacement">タイヤ・チューブ交換</li>
+              <li data-ja="各種ホイール交換" data-en="Wheel replacement">各種ホイール交換</li>
+              <li data-ja="ブレーキ調整、ブレーキシュー交換、ワイヤー交換" data-en="Brake adjustment, brake shoe replacement and cable replacement">ブレーキ調整、ブレーキシュー交換、ワイヤー交換</li>
+              <li data-ja="チェーン調整・交換" data-en="Chain adjustment and replacement">チェーン調整・交換</li>
+              <li data-ja="スタンド交換" data-en="Kickstand replacement">スタンド交換</li>
+              <li data-ja="電動アシストギアアッセンブリ交換" data-en="Electric-assist gear assembly replacement">電動アシストギアアッセンブリ交換</li>
+              <li data-ja="スポーク交換・ホイール調整" data-en="Spoke replacement and wheel truing">スポーク交換・ホイール調整</li>
+              <li data-ja="自転車洗車" data-en="Professional bicycle cleaning">自転車洗車</li>
+            </ul>
+          </article>
+        </div>
+
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/product-vivi-dx.png" alt="ビビ・DX">
+            </div>
+            <div class="product-body">
+              <span class="product-category" data-ja="電動アシスト自転車" data-en="Electric-assist bicycle">電動アシスト自転車</span>
+              <h4>ビビ・DX</h4>
+              <ul class="product-detail-list">
+                <li data-ja="16.0Ahの大容量バッテリーを備えた、買い物や日常利用向けの定番モデル" data-en="A popular everyday model with a large 16.0Ah battery, suited to shopping and daily use">16.0Ahの大容量バッテリーを備えた、買い物や日常利用向けの定番モデル</li>
+                <li data-ja="24型・26型を展開し、パワーモードで約59km、ロングモードで約107km走行" data-en="Available in 24-inch and 26-inch sizes, with approximately 59 km in Power mode and 107 km in Long mode">24型・26型を展開し、パワーモードで約59km、ロングモードで約107km走行</li>
+                <li data-ja="価格と在庫状況はお問い合わせください" data-en="Please contact us for price and availability">価格と在庫状況はお問い合わせください</li>
+              </ul>
+              <div class="product-placeholder" data-ja="大容量バッテリーと充実した標準装備を重視する方におすすめです。" data-en="Recommended for riders who value long battery range and practical standard equipment.">
+                大容量バッテリーと充実した標準装備を重視する方におすすめです。
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/product-mu.png" alt="MU">
+            </div>
+            <div class="product-body">
+              <span class="product-category" data-ja="コンパクトモデル" data-en="Compact model">コンパクトモデル</span>
+              <h4>MU</h4>
+              <ul class="product-detail-list">
+                <li data-ja="スロットルを回すだけで、ペダルをこがずに走行できる着座式の特定小型原動機付自転車" data-en="A seated specified small motorized bicycle that moves by turning the throttle, without pedalling">スロットルを回すだけで、ペダルをこがずに走行できる着座式の特定小型原動機付自転車</li>
+                <li data-ja="16.0Ahバッテリーと実用的な標準装備" data-en="16.0Ah battery and practical standard equipment">16.0Ahバッテリーと実用的な標準装備</li>
+                <li data-ja="価格と在庫状況はお問い合わせください" data-en="Please contact us for price and availability">価格と在庫状況はお問い合わせください</li>
+              </ul>
+              <div class="product-placeholder" data-ja="後から、重量・走行距離・適した利用場面などを追加できます。" data-en="Weight, range and recommended use can be added later.">
+                後から、重量・走行距離・適した利用場面などを追加できます。
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/product-richbit-city.png" alt="RICHBIT CITY">
+            </div>
+            <div class="product-body">
+              <span class="product-category" data-ja="特定小型モビリティ" data-en="Specified small mobility">特定小型モビリティ</span>
+              <h4>RICHBIT CITY</h4>
+              <ul class="product-detail-list">
+                <li data-ja="約16kgの軽量設計で、折りたたんで持ち運びや収納がしやすい特定小型原動機付自転車" data-en="A lightweight specified small motorized bicycle weighing about 16 kg, designed for folding, carrying and storage">約16kgの軽量設計で、折りたたんで持ち運びや収納がしやすい特定小型原動機付自転車</li>
+                <li data-ja="16.0Ahバッテリーを搭載したコンパクトな車体" data-en="Compact body equipped with a 16.0Ah battery">16.0Ahバッテリーを搭載したコンパクトな車体</li>
+                <li data-ja="価格と在庫状況はお問い合わせください" data-en="Please contact us for price and availability">価格と在庫状況はお問い合わせください</li>
+              </ul>
+              <div class="product-placeholder" data-ja="自転車型の乗りやすさと電動走行を組み合わせ、取り外し可能なバッテリーを採用しています。" data-en="It combines bicycle-style handling with electric mobility and uses a removable battery.">
+                自転車型の乗りやすさと電動走行を組み合わせ、取り外し可能なバッテリーを採用しています。
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="images/product-everest-xing-city.png" alt="EVEREST XING CITY">
+            </div>
+            <div class="product-body">
+              <span class="product-category" data-ja="特定小型モビリティ" data-en="Specified small mobility">特定小型モビリティ</span>
+              <h4>EVEREST XING CITY</h4>
+              <ul class="product-detail-list">
+                <li data-ja="500Wモーターと48Vバッテリーを搭載した、自転車型の特定小型原動機付自転車" data-en="A bicycle-style specified small motorized bicycle equipped with a 500 W motor and 48 V battery">500Wモーターと48Vバッテリーを搭載した、自転車型の特定小型原動機付自転車</li>
+                <li data-ja="折りたたみ可能で、4色のカラーバリエーション" data-en="Foldable design with four colour options">折りたたみ可能で、4色のカラーバリエーション</li>
+                <li data-ja="価格と在庫状況はお問い合わせください" data-en="Please contact us for price and availability">価格と在庫状況はお問い合わせください</li>
+              </ul>
+              <div class="product-placeholder" data-ja="車道モード20km/hに対応し、近距離の移動を快適にすることを重視したモデルです。" data-en="Designed for convenient short-distance travel, with a roadway mode of up to 20 km/h.">
+                車道モード20km/hに対応し、近距離の移動を快適にすることを重視したモデルです。
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="lineup-note"
+           data-ja="※掲載商品は取扱い例です。仕様・価格・在庫状況は変動するため、詳しくは電話またはメールでお問い合わせください。"
+           data-en="Products shown are examples. Specifications, prices and stock may change; please contact us for details.">
+          ※掲載商品は取扱い例です。仕様・価格・在庫状況は変動するため、詳しくは電話またはメールでお問い合わせください。
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="payment">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-number">04</div>
           <div>
             <h2 data-ja="お支払い方法" data-en="Payment methods">お支払い方法</h2>
             <p data-ja="現金・各種キャッシュレス決済をご利用いただけます" data-en="Cash and selected cashless payment methods are accepted">現金・各種キャッシュレス決済をご利用いただけます</p>
@@ -1219,7 +1587,7 @@
     <section class="section section-soft" id="access">
       <div class="container">
         <div class="section-heading">
-          <div class="section-number">04</div>
+          <div class="section-number">05</div>
           <div>
             <h2 data-ja="店舗情報・アクセス" data-en="Store information and access">店舗情報・アクセス</h2>
             <p data-ja="阪急十三駅西口から徒歩約3分" data-en="About a three-minute walk from the west exit of Juso Station">阪急十三駅西口から徒歩約3分</p>
@@ -1301,7 +1669,7 @@
           <h2 data-ja="お気軽にご相談ください。" data-en="Please feel free to contact us.">お気軽にご相談ください。</h2>
           <p
             data-ja="修理、出張修理、レンタサイクル、在庫などのお問い合わせは、電話またはメールで承ります。"
-            data-en="For repairs, on-site service, rentals or stock enquiries, please contact us by phone or email.">
+            data-en="English-speaking staff are available to assist international customers with bicycle sales, repairs, rentals and general enquiries. Please contact us by phone or email.">
             修理、出張修理、レンタサイクル、在庫などのお問い合わせは、電話またはメールで承ります。
           </p>
         </div>
@@ -1336,7 +1704,10 @@
           <p>〒532-0024 大阪市淀川区十三本町1丁目12-16</p>
         </div>
       </div>
-      <p>© <span id="year"></span> Cycle Shop Kanbayashi</p>
+      <div>
+        <p data-ja="英語対応可能なスタッフが在籍しています" data-en="English-speaking staff available">英語対応可能なスタッフが在籍しています</p>
+        <p>© <span id="year"></span> Cycle Shop Kanbayashi</p>
+      </div>
     </div>
   </footer>
 
