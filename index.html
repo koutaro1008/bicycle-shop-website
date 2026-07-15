@@ -3,102 +3,1401 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>自転車店ホームページ</title>
+  <meta name="description" content="大阪・十三のサイクルショップカンバヤシ。1936年創業。自転車販売・修理、出張修理、自転車洗車、レンタサイクルに対応しています。">
+  <meta name="theme-color" content="#173f86">
+  <title>サイクルショップカンバヤシ｜大阪・十三の自転車店</title>
+
   <style>
+    :root {
+      --blue: #173f86;
+      --blue-dark: #102d61;
+      --blue-light: #eef3fb;
+      --ink: #17191d;
+      --muted: #62666d;
+      --line: #dce2eb;
+      --paper: #ffffff;
+      --soft: #f7f8fa;
+      --accent: #ffdf00;
+      --max: 1160px;
+      --shadow: 0 16px 45px rgba(17, 38, 76, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, "Noto Sans JP", sans-serif;
-      color: #222;
-      background: #f5f5f5;
+      color: var(--ink);
+      background: var(--paper);
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      line-height: 1.8;
     }
 
-    header {
-      padding: 50px 20px;
-      text-align: center;
-      color: white;
-      background: #185f8d;
+    body.menu-open {
+      overflow: hidden;
     }
 
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
+    img {
+      display: block;
+      max-width: 100%;
     }
 
-    section {
-      margin-bottom: 24px;
-      padding: 24px;
-      background: white;
-      border-radius: 10px;
+    a {
+      color: inherit;
     }
 
-    h1 {
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 9999;
+      padding: 10px 14px;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 8px;
+      transform: translateY(-150%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(23, 63, 134, 0.10);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      line-height: 1.25;
+    }
+
+    .brand-name {
+      display: block;
+      font-size: 0.98rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-since {
+      display: block;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-list a {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-list a:hover,
+    .nav-list a:focus-visible {
+      color: var(--blue);
+    }
+
+    .language-toggle {
+      display: inline-flex;
+      overflow: hidden;
+      border: 1px solid var(--blue);
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    .language-toggle button {
+      min-width: 48px;
+      padding: 8px 10px;
+      color: var(--blue);
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .language-toggle button[aria-pressed="true"] {
+      color: #fff;
+      background: var(--blue);
+    }
+
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .menu-button span,
+    .menu-button::before,
+    .menu-button::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      margin: 4px auto;
+      content: "";
+      background: var(--ink);
+      transition: 0.25s;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 96px 0 74px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(23, 63, 134, 0.12), transparent 32%),
+        linear-gradient(180deg, #fff, #fafbfe);
+    }
+
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      z-index: 0;
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero::before {
+      top: 72px;
+      right: -110px;
+      width: 370px;
+      height: 370px;
+      background:
+        radial-gradient(circle at 45% 40%, rgba(255,255,255,0.22), transparent 7%),
+        radial-gradient(circle at 55% 55%, rgba(255,255,255,0.11), transparent 4%),
+        var(--blue);
+      opacity: 0.96;
+    }
+
+    .hero::after {
+      bottom: 30px;
+      left: -80px;
+      width: 190px;
+      height: 190px;
+      border: 24px solid rgba(23, 63, 134, 0.06);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .eyebrow {
       margin: 0 0 12px;
+      color: var(--blue);
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
-    h2 {
-      color: #185f8d;
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5.5vw, 5.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero-lead {
+      max-width: 670px;
+      margin: 28px 0 0;
+      color: #3f4349;
+      font-size: clamp(1rem, 1.7vw, 1.2rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
     }
 
     .button {
-      display: inline-block;
-      margin-top: 10px;
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       padding: 12px 20px;
-      color: white;
+      border: 1px solid var(--blue);
+      border-radius: 999px;
+      font-weight: 800;
       text-decoration: none;
-      background: #185f8d;
-      border-radius: 6px;
+      transition: 0.2s ease;
     }
 
-    footer {
+    .button-primary {
+      color: #fff;
+      background: var(--blue);
+    }
+
+    .button-secondary {
+      color: var(--blue);
+      background: #fff;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 9px 24px rgba(23, 63, 134, 0.18);
+    }
+
+    .hero-mark {
+      position: relative;
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-mark img {
+      position: relative;
+      z-index: 2;
+      width: min(92%, 510px);
+      filter: drop-shadow(0 18px 35px rgba(0,0,0,0.10));
+    }
+
+    .hero-note {
+      position: absolute;
+      right: 2%;
+      bottom: 5%;
+      z-index: 3;
+      padding: 12px 18px;
+      color: #fff;
+      border-radius: 999px;
+      background: var(--blue-dark);
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    /* Common sections */
+    section {
+      scroll-margin-top: 92px;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-soft {
+      background: var(--soft);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 46px;
+    }
+
+    .section-number {
+      display: grid;
+      width: 88px;
+      height: 88px;
+      place-items: center;
+      color: #fff;
+      border-radius: 50%;
+      background: var(--blue);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section-heading p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 54px;
+    }
+
+    .shop-photo {
+      overflow: hidden;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .shop-photo img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .about-copy h3 {
+      margin: 0 0 16px;
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+    }
+
+    .about-copy p {
+      margin: 0 0 16px;
+      color: #454951;
+    }
+
+    .strengths {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .strength {
+      min-height: 128px;
       padding: 20px;
-      text-align: center;
-      color: white;
-      background: #333;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+    }
+
+    .strength strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--blue);
+      font-size: 1.05rem;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      gap: 34px;
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      align-items: center;
+      gap: 40px;
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: #fff;
+      box-shadow: 0 12px 35px rgba(17, 38, 76, 0.06);
+    }
+
+    .service-card:nth-child(even) .service-visual {
+      order: 2;
+    }
+
+    .service-card::before {
+      position: absolute;
+      top: -70px;
+      right: -50px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      content: "";
+      background: rgba(23, 63, 134, 0.06);
+    }
+
+    .service-visual {
+      position: relative;
+      min-height: 270px;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      border-radius: 24px;
+      background: var(--blue-light);
+    }
+
+    .service-visual img {
+      max-height: 260px;
+      object-fit: contain;
+    }
+
+    .service-tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .service-card h3 {
+      margin: 0 0 16px;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      line-height: 1.25;
+    }
+
+    .service-card p {
+      margin: 0 0 14px;
+      color: #484c52;
+    }
+
+    .service-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-list li {
+      position: relative;
+      padding: 7px 0 7px 26px;
+    }
+
+    .service-list li::before {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      color: var(--blue);
+      content: "✓";
+      font-weight: 900;
+    }
+
+    .highlight {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--accent);
+      font-weight: 900;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .price-box {
+      padding: 16px;
+      border-radius: 16px;
+      background: var(--blue-light);
+    }
+
+    .price-box small {
+      display: block;
+      color: var(--muted);
+    }
+
+    .price-box strong {
+      color: var(--blue);
+      font-size: 1.3rem;
+    }
+
+    /* Payments */
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .payment-item {
+      display: flex;
+      min-height: 88px;
+      align-items: center;
+      gap: 12px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      font-weight: 800;
+    }
+
+    .payment-icon {
+      display: grid;
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      color: #fff;
+      border-radius: 50%;
+      background: var(--blue);
+      font-size: 0.82rem;
+    }
+
+    .payment-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Access */
+    .access-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .info-panel {
+      padding: 34px;
+      border-radius: 26px;
+      background: var(--blue-dark);
+      color: #fff;
+    }
+
+    .info-panel h3 {
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+
+    .info-list {
+      margin: 0;
+    }
+
+    .info-row {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .info-row dt {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      opacity: 0.72;
+      text-transform: uppercase;
+    }
+
+    .info-row dd {
+      margin: 4px 0 0;
+      font-weight: 700;
+    }
+
+    .info-row a {
+      color: #fff;
+    }
+
+    .map-wrap {
+      min-height: 510px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: #e9edf3;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 510px;
+      border: 0;
+    }
+
+    .link-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .link-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      text-decoration: none;
+    }
+
+    .link-card strong {
+      display: block;
+      color: var(--blue);
+    }
+
+    .link-card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+    .contact {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: var(--blue);
+    }
+
+    .contact::after {
+      position: absolute;
+      right: -130px;
+      bottom: -170px;
+      width: 420px;
+      height: 420px;
+      border: 42px solid rgba(255,255,255,0.10);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .contact-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 52px;
+    }
+
+    .contact h2 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 5vw, 4.4rem);
+    }
+
+    .contact p {
+      margin: 0;
+      color: rgba(255,255,255,0.84);
+    }
+
+    .contact-actions {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 20px 22px;
+      color: var(--ink);
+      border-radius: 18px;
+      background: #fff;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .contact-link small {
+      display: block;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 34px 0;
+      color: #cdd4df;
+      background: #0d1523;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-brand img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      font-size: 0.84rem;
+    }
+
+    /* Floating mobile call */
+    .floating-call {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 900;
+      display: none;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      color: #fff;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 12px 30px rgba(17, 38, 76, 0.28);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 980px) {
+      .nav-list {
+        position: fixed;
+        inset: 76px 0 auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 14px 20px 24px;
+        border-bottom: 1px solid var(--line);
+        background: #fff;
+        box-shadow: 0 18px 35px rgba(0,0,0,0.08);
+      }
+
+      .nav-list.open {
+        display: flex;
+      }
+
+      .nav-list a {
+        display: block;
+        padding: 14px 4px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .access-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero-mark {
+        min-height: 330px;
+      }
+
+      .service-card,
+      .service-card:nth-child(even) {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card:nth-child(even) .service-visual {
+        order: 0;
+      }
+
+      .payment-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      .header-inner {
+        min-height: 68px;
+      }
+
+      .brand img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .brand-name {
+        font-size: 0.84rem;
+      }
+
+      .brand-since {
+        font-size: 0.68rem;
+      }
+
+      .language-toggle button {
+        min-width: 42px;
+        padding: 7px 8px;
+      }
+
+      .hero {
+        padding: 54px 0 58px;
+      }
+
+      .hero-grid {
+        gap: 24px;
+      }
+
+      .hero-mark {
+        min-height: 260px;
+      }
+
+      .hero-mark img {
+        width: min(100%, 360px);
+      }
+
+      .hero-note {
+        right: 0;
+        bottom: 0;
+        font-size: 0.8rem;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .section-heading {
+        grid-template-columns: 58px 1fr;
+        gap: 14px;
+        margin-bottom: 34px;
+      }
+
+      .section-number {
+        width: 54px;
+        height: 54px;
+        font-size: 0.78rem;
+      }
+
+      .strengths,
+      .payment-grid,
+      .price-grid,
+      .link-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        gap: 24px;
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .service-visual {
+        min-height: 220px;
+      }
+
+      .info-panel {
+        padding: 24px;
+      }
+
+      .map-wrap,
+      .map-wrap iframe {
+        min-height: 390px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .floating-call {
+        display: inline-flex;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>〇〇自転車店</h1>
-    <p>地域の自転車販売・修理を承ります</p>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="サイクルショップカンバヤシ トップへ">
+        <img src="images/logo-main.png" alt="サイクルショップカンバヤシのロゴ">
+        <span class="brand-text">
+          <span class="brand-name" data-ja="サイクルショップカンバヤシ" data-en="Cycle Shop Kanbayashi">サイクルショップカンバヤシ</span>
+          <span class="brand-since">SINCE 1936</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <nav aria-label="メインメニュー">
+          <ul class="nav-list" id="navList">
+            <li><a href="#about" data-ja="店舗紹介" data-en="About">店舗紹介</a></li>
+            <li><a href="#services" data-ja="サービス" data-en="Services">サービス</a></li>
+            <li><a href="#payment" data-ja="お支払い" data-en="Payment">お支払い</a></li>
+            <li><a href="#access" data-ja="アクセス" data-en="Access">アクセス</a></li>
+            <li><a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+
+        <div class="language-toggle" aria-label="言語切り替え">
+          <button type="button" id="jaButton" aria-pressed="true">日本語</button>
+          <button type="button" id="enButton" aria-pressed="false">EN</button>
+        </div>
+
+        <button class="menu-button" id="menuButton" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navList">
+          <span></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>当店について</h2>
-      <p>
-        自転車の販売、パンク修理、タイヤ交換、出張修理などに対応しています。
-      </p>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Cycle Shop Kanbayashi</p>
+          <h1>
+            <span data-ja="十三で、" data-en="Serving Juso">十三で、</span>
+            <span data-ja="1936年から。" data-en="since 1936.">1936年から。</span>
+          </h1>
+          <p class="hero-lead"
+             data-ja="自転車の販売・修理から、出張修理、自転車洗車、レンタサイクルまで。地域に根差した自転車店として、毎日の移動を支えます。"
+             data-en="From bicycle sales and repairs to on-site service, professional bike cleaning and rentals, we support everyday mobility in the local community.">
+            自転車の販売・修理から、出張修理、自転車洗車、レンタサイクルまで。地域に根差した自転車店として、毎日の移動を支えます。
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="tel:0663014000" data-ja="電話で相談する" data-en="Call us">電話で相談する</a>
+            <a class="button button-secondary" href="#access" data-ja="店舗へのアクセス" data-en="Get directions">店舗へのアクセス</a>
+          </div>
+        </div>
+
+        <div class="hero-mark" aria-hidden="true">
+          <img src="images/heading-name.png" alt="">
+          <div class="hero-note" data-ja="阪急十三駅から徒歩約3分" data-en="About 3 min. from Juso Station">阪急十三駅から徒歩約3分</div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>主なサービス</h2>
-      <ul>
-        <li>パンク修理</li>
-        <li>タイヤ・チューブ交換</li>
-        <li>ブレーキ調整</li>
-        <li>自転車販売</li>
-        <li>出張修理</li>
-      </ul>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-number">01</div>
+          <div>
+            <h2 data-ja="地域と歩んできた自転車店" data-en="A bicycle shop rooted in the community">地域と歩んできた自転車店</h2>
+            <p data-ja="サイクルショップカンバヤシについて" data-en="About Cycle Shop Kanbayashi">サイクルショップカンバヤシについて</p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <figure class="shop-photo">
+            <img src="images/shop-exterior.png" alt="サイクルショップカンバヤシの店舗外観">
+          </figure>
+
+          <div class="about-copy">
+            <h3 data-ja="創業1936年。十三の街とともに。" data-en="Established in 1936, serving Juso ever since.">創業1936年。十三の街とともに。</h3>
+            <p
+              data-ja="自転車や特定小型原動機付自転車の販売・修理・メンテナンスを行っています。日常使いの自転車から電動アシスト自転車、スポーツ車まで、お困りごとをお気軽にご相談ください。"
+              data-en="We provide sales, repairs and maintenance for bicycles and specified small motorized bicycles. Please contact us about city bikes, electric-assist bicycles, sports bikes and more.">
+              自転車や特定小型原動機付自転車の販売・修理・メンテナンスを行っています。日常使いの自転車から電動アシスト自転車、スポーツ車まで、お困りごとをお気軽にご相談ください。
+            </p>
+
+            <div class="strengths">
+              <div class="strength">
+                <strong data-ja="1936年創業" data-en="Established in 1936">1936年創業</strong>
+                <span data-ja="長年の経験を生かして、地域の自転車生活を支えます。" data-en="Decades of experience supporting local bicycle users.">長年の経験を生かして、地域の自転車生活を支えます。</span>
+              </div>
+              <div class="strength">
+                <strong data-ja="十三駅から徒歩約3分" data-en="About 3 minutes from Juso Station">十三駅から徒歩約3分</strong>
+                <span data-ja="駅から立ち寄りやすい店舗です。" data-en="Conveniently located near the station.">駅から立ち寄りやすい店舗です。</span>
+              </div>
+              <div class="strength">
+                <strong data-ja="幅広い車種に対応" data-en="A wide range of bicycles">幅広い車種に対応</strong>
+                <span data-ja="一般車、電動アシスト車、スポーツ車などをご相談いただけます。" data-en="City bikes, electric-assist bikes, sports bikes and more.">一般車、電動アシスト車、スポーツ車などをご相談いただけます。</span>
+              </div>
+              <div class="strength">
+                <strong data-ja="販売・修理・メンテナンス" data-en="Sales, repairs and maintenance">販売・修理・メンテナンス</strong>
+                <span data-ja="購入後の点検や修理もお任せください。" data-en="We also provide after-sales inspections and repairs.">購入後の点検や修理もお任せください。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>営業時間</h2>
-      <p>営業時間：9:00～18:00</p>
-      <p>定休日：〇曜日</p>
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-number">02</div>
+          <div>
+            <h2 data-ja="サービス" data-en="Services">サービス</h2>
+            <p data-ja="自転車に関するさまざまなお困りごとに対応します" data-en="Practical support for your bicycle needs">自転車に関するさまざまなお困りごとに対応します</p>
+          </div>
+        </div>
+
+        <div class="services">
+          <article class="service-card">
+            <div class="service-visual">
+              <img src="images/illust-repairman.png" alt="出張修理サービスのイラスト">
+            </div>
+            <div>
+              <span class="service-tag">On-site repair</span>
+              <h3 data-ja="出張修理サービス" data-en="On-site repair service">出張修理サービス</h3>
+              <p
+                data-ja="大阪市内の指定地域へ伺い、鍵交換、チェーン切れ、パンク修理などに対応します。現地で修理できない場合は、引き取り修理を行います。"
+                data-en="We visit designated areas within Osaka City for services such as lock replacement, broken chains and puncture repairs. If repair on site is not possible, we can collect the bicycle for repair.">
+                大阪市内の指定地域へ伺い、鍵交換、チェーン切れ、パンク修理などに対応します。現地で修理できない場合は、引き取り修理を行います。
+              </p>
+              <ul class="service-list">
+                <li data-ja="対応地域：大阪市内" data-en="Service area: Osaka City">対応地域：大阪市内</li>
+                <li data-ja="ご自宅または職場で対応" data-en="Service at your home or workplace">ご自宅または職場で対応</li>
+                <li data-ja="受付はお電話で承ります" data-en="Please request service by phone">受付はお電話で承ります</li>
+              </ul>
+              <div class="highlight"
+                   data-ja="当店発行のサービス証がある自転車は、市内の出張・引き取り料金無料です（修理費用別途）。"
+                   data-en="Bicycles with our service certificate qualify for free dispatch or collection within Osaka City. Repair charges apply separately.">
+                当店発行のサービス証がある自転車は、市内の出張・引き取り料金無料です（修理費用別途）。
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-visual">
+              <img src="images/illust-bikeclean.png" alt="自転車洗車のイラスト">
+            </div>
+            <div>
+              <span class="service-tag">Professional Bike Clean</span>
+              <h3 data-ja="プロフェッショナル自転車洗車" data-en="Professional bicycle cleaning">プロフェッショナル自転車洗車</h3>
+              <p
+                data-ja="古くなった自転車にも、新車のような輝きを。洗浄から点検整備まで、丁寧に仕上げます。"
+                data-en="Restore the shine of an older bicycle with a thorough professional cleaning and inspection.">
+                古くなった自転車にも、新車のような輝きを。洗浄から点検整備まで、丁寧に仕上げます。
+              </p>
+              <ul class="service-list">
+                <li data-ja="本体・駆動部の泡洗浄、薬剤洗車" data-en="Foam and solution cleaning of the frame and drivetrain">本体・駆動部の泡洗浄、薬剤洗車</li>
+                <li data-ja="エアーブローと拭き取り" data-en="Air blow drying and wiping">エアーブローと拭き取り</li>
+                <li data-ja="ワックスコーティング・抗菌" data-en="Wax coating and antibacterial treatment">ワックスコーティング・抗菌</li>
+                <li data-ja="グリスアップ・点検整備" data-en="Lubrication, inspection and adjustment">グリスアップ・点検整備</li>
+                <li data-ja="各部整備・点検・虫ゴム交換を含みます" data-en="Includes general adjustment, inspection and valve rubber replacement">各部整備・点検・虫ゴム交換を含みます</li>
+              </ul>
+              <div class="price-grid">
+                <div class="price-box">
+                  <small data-ja="洗車価格" data-en="Price">洗車価格</small>
+                  <strong data-ja="5,000円〜" data-en="From ¥5,000">5,000円〜</strong>
+                </div>
+                <div class="price-box">
+                  <small data-ja="お預かり時間" data-en="Service time">お預かり時間</small>
+                  <strong data-ja="約1時間" data-en="About 1 hour">約1時間</strong>
+                </div>
+              </div>
+              <p style="margin-top: 16px; font-size: 0.9rem;"
+                 data-ja="※交換部品および交換費用は別途発生します。"
+                 data-en="Replacement parts and labor are charged separately.">
+                ※交換部品および交換費用は別途発生します。
+              </p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-visual">
+              <img src="images/illust-rental-bike.png" alt="レンタサイクルのイラスト">
+            </div>
+            <div>
+              <span class="service-tag">Rental Bicycle</span>
+              <h3 data-ja="レンタサイクル" data-en="Bicycle rental">レンタサイクル</h3>
+              <p
+                data-ja="ビジネス、観光、街歩き、ちょっとした移動に。電動アシスト自転車と軽快車をご用意しています。"
+                data-en="Convenient for business, sightseeing and getting around town. Electric-assist and standard city bicycles are available.">
+                ビジネス、観光、街歩き、ちょっとした移動に。電動アシスト自転車と軽快車をご用意しています。
+              </p>
+              <div class="price-grid">
+                <div class="price-box">
+                  <small data-ja="電動アシスト・1日" data-en="Electric-assist / day">電動アシスト・1日</small>
+                  <strong>1,500円</strong>
+                </div>
+                <div class="price-box">
+                  <small data-ja="軽快車・1日" data-en="City bicycle / day">軽快車・1日</small>
+                  <strong>1,000円</strong>
+                </div>
+              </div>
+              <ul class="service-list">
+                <li data-ja="貸出時間：10:30〜18:30（基本1日レンタル）" data-en="Rental hours: 10:30–18:30, normally a one-day rental">貸出時間：10:30〜18:30（基本1日レンタル）</li>
+                <li data-ja="長期レンタルはご相談ください" data-en="Please ask about long-term rental">長期レンタルはご相談ください</li>
+                <li data-ja="貸出時に写真付き身分証をご提示ください" data-en="Photo identification is required">貸出時に写真付き身分証をご提示ください</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>お問い合わせ</h2>
-      <p>修理や在庫について、お電話でお問い合わせください。</p>
-      <a class="button" href="tel:0000000000">電話する</a>
+    <section class="section" id="payment">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-number">03</div>
+          <div>
+            <h2 data-ja="お支払い方法" data-en="Payment methods">お支払い方法</h2>
+            <p data-ja="現金・各種キャッシュレス決済をご利用いただけます" data-en="Cash and selected cashless payment methods are accepted">現金・各種キャッシュレス決済をご利用いただけます</p>
+          </div>
+        </div>
+
+        <div class="payment-grid">
+          <div class="payment-item"><span class="payment-icon">¥</span><span data-ja="現金" data-en="Cash">現金</span></div>
+          <div class="payment-item"><span class="payment-icon">C</span><span data-ja="クレジットカード" data-en="Credit cards">クレジットカード</span></div>
+          <div class="payment-item"><span class="payment-icon">P</span><span>PayPay</span></div>
+          <div class="payment-item"><span class="payment-icon">au</span><span>au PAY</span></div>
+          <div class="payment-item"><span class="payment-icon">R</span><span data-ja="楽天ペイ" data-en="Rakuten Pay">楽天ペイ</span></div>
+          <div class="payment-item"><span class="payment-icon">d</span><span data-ja="d払い" data-en="d Payment">d払い</span></div>
+          <div class="payment-item"><span class="payment-icon">券</span><span data-ja="大阪市プレミアム付商品券" data-en="Osaka City Premium Gift Certificates">大阪市プレミアム付商品券</span></div>
+        </div>
+        <p class="payment-note"
+           data-ja="※利用可能な決済方法や商品券の利用期間は変更される場合があります。"
+           data-en="Available payment methods and gift certificate periods may change.">
+          ※利用可能な決済方法や商品券の利用期間は変更される場合があります。
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="access">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-number">04</div>
+          <div>
+            <h2 data-ja="店舗情報・アクセス" data-en="Store information and access">店舗情報・アクセス</h2>
+            <p data-ja="阪急十三駅西口から徒歩約3分" data-en="About a three-minute walk from the west exit of Juso Station">阪急十三駅西口から徒歩約3分</p>
+          </div>
+        </div>
+
+        <div class="access-grid">
+          <div>
+            <div class="info-panel">
+              <h3 data-ja="サイクルショップカンバヤシ" data-en="Cycle Shop Kanbayashi">サイクルショップカンバヤシ</h3>
+              <dl class="info-list">
+                <div class="info-row">
+                  <dt data-ja="住所" data-en="Address">住所</dt>
+                  <dd data-ja="〒532-0024 大阪府大阪市淀川区十三本町1丁目12-16" data-en="1-12-16 Juso-honmachi, Yodogawa-ku, Osaka 532-0024">〒532-0024 大阪府大阪市淀川区十三本町1丁目12-16</dd>
+                </div>
+                <div class="info-row">
+                  <dt data-ja="電話" data-en="Phone">電話</dt>
+                  <dd><a href="tel:0663014000">06-6301-4000</a></dd>
+                </div>
+                <div class="info-row">
+                  <dt data-ja="メール" data-en="Email">メール</dt>
+                  <dd><a href="mailto:kanbayashi1936@outlook.jp">kanbayashi1936@outlook.jp</a></dd>
+                </div>
+                <div class="info-row">
+                  <dt data-ja="営業時間" data-en="Hours">営業時間</dt>
+                  <dd data-ja="10:00〜19:00" data-en="10:00–19:00">10:00〜19:00</dd>
+                </div>
+                <div class="info-row">
+                  <dt data-ja="定休日" data-en="Closed">定休日</dt>
+                  <dd data-ja="木曜日" data-en="Thursday">木曜日</dd>
+                </div>
+                <div class="info-row">
+                  <dt data-ja="アクセス" data-en="Access">アクセス</dt>
+                  <dd data-ja="阪急十三駅西口から徒歩約3分" data-en="About 3 minutes on foot from the west exit of Hankyu Juso Station">阪急十三駅西口から徒歩約3分</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="link-cards">
+              <a class="link-card"
+                 href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%82%AB%E3%83%B3%E3%83%90%E3%83%A4%E3%82%B7+%E5%A4%A7%E9%98%AA%E5%B8%82%E6%B7%80%E5%B7%9D%E5%8C%BA%E5%8D%81%E4%B8%89%E6%9C%AC%E7%94%BA1%E4%B8%81%E7%9B%AE12-16"
+                 target="_blank" rel="noopener">
+                <strong data-ja="Googleマップを開く" data-en="Open Google Maps">Googleマップを開く</strong>
+                <span data-ja="経路や現在地からの距離を確認" data-en="Check directions from your location">経路や現在地からの距離を確認</span>
+              </a>
+
+              <a class="link-card"
+                 href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%82%AB%E3%83%B3%E3%83%90%E3%83%A4%E3%82%B7"
+                 target="_blank" rel="noopener">
+                <strong data-ja="Googleの口コミを見る" data-en="View Google reviews">Googleの口コミを見る</strong>
+                <span data-ja="店舗情報と口コミを確認" data-en="View store information and reviews">店舗情報と口コミを確認</span>
+              </a>
+
+              <a class="link-card"
+                 href="https://www.instagram.com/kanbayashi13/"
+                 target="_blank" rel="noopener">
+                <strong>Instagram @kanbayashi13</strong>
+                <span data-ja="店舗からの投稿を見る" data-en="See posts from the shop">店舗からの投稿を見る</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="map-wrap">
+            <iframe
+              title="サイクルショップカンバヤシ周辺のGoogleマップ"
+              src="https://www.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E6%B7%80%E5%B7%9D%E5%8C%BA%E5%8D%81%E4%B8%89%E6%9C%AC%E7%94%BA1%E4%B8%81%E7%9B%AE12-16&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow" style="color: #fff;">Contact</p>
+          <h2 data-ja="お気軽にご相談ください。" data-en="Please feel free to contact us.">お気軽にご相談ください。</h2>
+          <p
+            data-ja="修理、出張修理、レンタサイクル、在庫などのお問い合わせは、電話またはメールで承ります。"
+            data-en="For repairs, on-site service, rentals or stock enquiries, please contact us by phone or email.">
+            修理、出張修理、レンタサイクル、在庫などのお問い合わせは、電話またはメールで承ります。
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="contact-link" href="tel:0663014000">
+            <span>
+              <small data-ja="電話で問い合わせ" data-en="Call us">電話で問い合わせ</small>
+              06-6301-4000
+            </span>
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <a class="contact-link" href="mailto:kanbayashi1936@outlook.jp">
+            <span>
+              <small data-ja="メールで問い合わせ" data-en="Email us">メールで問い合わせ</small>
+              kanbayashi1936@outlook.jp
+            </span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2026 〇〇自転車店</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo-main.png" alt="">
+        <div>
+          <strong data-ja="サイクルショップカンバヤシ" data-en="Cycle Shop Kanbayashi">サイクルショップカンバヤシ</strong>
+          <p>〒532-0024 大阪市淀川区十三本町1丁目12-16</p>
+        </div>
+      </div>
+      <p>© <span id="year"></span> Cycle Shop Kanbayashi</p>
+    </div>
   </footer>
+
+  <a class="floating-call" href="tel:0663014000" data-ja="電話する" data-en="Call">電話する</a>
+
+  <script>
+    (() => {
+      const jaButton = document.getElementById("jaButton");
+      const enButton = document.getElementById("enButton");
+      const menuButton = document.getElementById("menuButton");
+      const navList = document.getElementById("navList");
+      const translatableElements = document.querySelectorAll("[data-ja][data-en]");
+
+      function setLanguage(language) {
+        const isJapanese = language === "ja";
+
+        document.documentElement.lang = language;
+        document.title = isJapanese
+          ? "サイクルショップカンバヤシ｜大阪・十三の自転車店"
+          : "Cycle Shop Kanbayashi | Bicycle Shop in Juso, Osaka";
+
+        translatableElements.forEach((element) => {
+          element.textContent = element.dataset[language];
+        });
+
+        jaButton.setAttribute("aria-pressed", String(isJapanese));
+        enButton.setAttribute("aria-pressed", String(!isJapanese));
+        localStorage.setItem("kanbayashi-language", language);
+      }
+
+      jaButton.addEventListener("click", () => setLanguage("ja"));
+      enButton.addEventListener("click", () => setLanguage("en"));
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = navList.classList.toggle("open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
+        document.body.classList.toggle("menu-open", isOpen);
+      });
+
+      navList.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navList.classList.remove("open");
+          menuButton.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+        });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          navList.classList.remove("open");
+          menuButton.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+        }
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const storedLanguage = localStorage.getItem("kanbayashi-language");
+      setLanguage(storedLanguage === "en" ? "en" : "ja");
+    })();
+  </script>
 </body>
 </html>
