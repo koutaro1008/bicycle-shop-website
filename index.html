@@ -629,16 +629,35 @@
     }
 
     .news-item {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 22px;
-      padding: 18px 0;
       border-top: 1px solid var(--line);
     }
 
     .news-item:first-child {
-      padding-top: 0;
       border-top: 0;
+    }
+
+    .news-link {
+      display: grid;
+      grid-template-columns: 130px 1fr 34px;
+      gap: 22px;
+      align-items: center;
+      padding: 18px 0;
+      text-decoration: none;
+      border-radius: 14px;
+      transition: 0.2s ease;
+    }
+
+    .news-link:hover,
+    .news-link:focus-visible {
+      padding-inline: 14px;
+      background: var(--blue-light);
+    }
+
+    .news-arrow {
+      color: var(--blue);
+      font-size: 1.4rem;
+      font-weight: 900;
+      text-align: right;
     }
 
     .news-date {
@@ -1362,10 +1381,28 @@
         color: #2f3339;
       }
 
-      .news-inner,
-      .news-item {
+      .news-inner {
         grid-template-columns: 1fr;
         gap: 8px;
+      }
+
+      .news-link {
+        grid-template-columns: 1fr 30px;
+        gap: 8px 14px;
+      }
+
+      .news-date {
+        grid-column: 1;
+      }
+
+      .news-content {
+        grid-column: 1;
+      }
+
+      .news-arrow {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: center;
       }
 
       .news-section {
@@ -1533,6 +1570,34 @@
       </div>
     </section>
 
+
+    <section class="news-section" aria-labelledby="news-heading">
+      <div class="container news-inner">
+        <h2 class="news-title" id="news-heading">News</h2>
+
+        <ul class="news-list">
+          <li class="news-item">
+            <a class="news-link" href="news.html">
+              <time class="news-date" datetime="2026-07-15">2026.07.15</time>
+              <div class="news-content">
+                <strong
+                  data-ja="公式ホームページをリニューアルしました"
+                  data-en="Our official website has been renewed">
+                  公式ホームページをリニューアルしました
+                </strong>
+                <p
+                  data-ja="独自ドメインを取得し、公式ホームページを新しく公開しました。今後は入荷情報や店舗からのお知らせも発信します。"
+                  data-en="We have launched our renewed official website. Future updates will include new arrivals and shop announcements.">
+                  独自ドメインを取得し、公式ホームページを新しく公開しました。今後は入荷情報や店舗からのお知らせも発信します。
+                </p>
+              </div>
+              <span class="news-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <section class="opening-message" aria-label="店舗メッセージ">
       <div class="container">
         <ul class="opening-lines">
@@ -1551,29 +1616,6 @@
       </div>
     </section>
 
-    <section class="news-section" aria-labelledby="news-heading">
-      <div class="container news-inner">
-        <h2 class="news-title" id="news-heading">News</h2>
-
-        <ul class="news-list">
-          <li class="news-item">
-            <time class="news-date" datetime="2026-07-15">2026.07.15</time>
-            <div class="news-content">
-              <strong
-                data-ja="公式ホームページをリニューアルしました"
-                data-en="Our official website has been renewed">
-                公式ホームページをリニューアルしました
-              </strong>
-              <p
-                data-ja="独自ドメイン「kanbayashi-cycle.com」を取得し、公式ホームページを新しく公開しました。今後は店舗からのお知らせや取扱商品、サービスに関する情報をこちらからも発信していきます。"
-                data-en="We have launched our renewed official website under the new domain “kanbayashi-cycle.com”. We will use this website to share shop news, product information and service updates.">
-                独自ドメイン「kanbayashi-cycle.com」を取得し、公式ホームページを新しく公開しました。今後は店舗からのお知らせや取扱商品、サービスに関する情報をこちらからも発信していきます。
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
 
     <section class="section" id="about">
       <div class="container">
