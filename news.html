@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="サイクルショップカンバヤシからのお知らせ、入荷情報、営業情報をご案内します。">
+  <meta name="description" content="サイクルショップカンバヤシからのお知らせ、入荷情報、商品情報、営業情報をご案内します。">
   <meta name="theme-color" content="#173f86">
   <link rel="icon" type="image/png" href="images/logo-main.png">
   <link rel="apple-touch-icon" href="images/logo-main.png">
@@ -115,12 +115,42 @@
       padding: 58px 0 90px;
     }
 
+    .news-list {
+      display: grid;
+      gap: 30px;
+    }
+
     .news-card {
+      scroll-margin-top: 24px;
       padding: clamp(26px, 5vw, 54px);
       border: 1px solid var(--line);
       border-radius: 26px;
       background: #fff;
       box-shadow: 0 16px 45px rgba(17, 38, 76, 0.08);
+    }
+
+    .news-card:target {
+      border-color: var(--blue);
+      box-shadow: 0 16px 50px rgba(23, 63, 134, 0.18);
+    }
+
+    .article-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 5px 11px;
+      color: var(--blue);
+      border-radius: 999px;
+      background: var(--blue-light);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .official-link {
+      display: inline-flex;
+      margin-top: 8px;
+      color: var(--blue);
+      font-weight: 800;
     }
 
     .news-date {
@@ -239,38 +269,94 @@
 
     <section class="news-area">
       <div class="container">
-        <article class="news-card">
-          <time class="news-date" datetime="2026-07-15">2026.07.15</time>
-          <h2>公式ホームページをリニューアルしました</h2>
+        <div class="news-list">
+          <article class="news-card" id="renewal">
+            <span class="article-label">WEBSITE</span>
+            <time class="news-date" datetime="2026-07-15">2026.07.15</time>
+            <h2>公式ホームページをリニューアルしました</h2>
 
-          <p>
-            サイクルショップカンバヤシの公式ホームページをリニューアルし、
-            独自ドメイン「kanbayashi-cycle.com」で新しく公開しました。
-          </p>
+            <p>
+              サイクルショップカンバヤシの公式ホームページをリニューアルし、
+              独自ドメイン「kanbayashi-cycle.com」で新しく公開しました。
+            </p>
 
-          <p>
-            店舗情報や取扱サービスをより分かりやすくお伝えできるよう、
-            自転車販売・修理、出張修理、自転車洗車、レンタサイクル、
-            特定小型モビリティなどの情報を掲載しています。
-          </p>
+            <p>
+              店舗情報や取扱サービスをより分かりやすくお伝えできるよう、
+              自転車販売・修理、出張修理、自転車洗車、レンタサイクル、
+              特定小型モビリティなどの情報を掲載しています。
+            </p>
 
-          <div class="news-points">
-            <strong>今後掲載する主な情報</strong>
-            入荷情報、新商品のご案内、サービスのお知らせ、店舗からのご案内などを、
-            このページから発信していきます。
-          </div>
+            <div class="news-points">
+              <strong>今後掲載する主な情報</strong>
+              入荷情報、新商品のご案内、サービスのお知らせ、店舗からのご案内などを、
+              このページから発信していきます。
+            </div>
 
-          <p>
-            地域の皆さまにとって、より便利で分かりやすい情報源となるよう更新してまいります。
-            今後ともサイクルショップカンバヤシをよろしくお願いいたします。
-          </p>
+            <p>
+              地域の皆さまにとって、より便利で分かりやすい情報源となるよう更新してまいります。
+              今後ともサイクルショップカンバヤシをよろしくお願いいたします。
+            </p>
+          </article>
 
-          <a class="button" href="index.html">トップページへ戻る</a>
+          <article class="news-card" id="tokutei">
+            <span class="article-label">NEW MOBILITY</span>
+            <time class="news-date" datetime="2026-07-15">2026.07.15</time>
+            <h2>特定小型原動機付自転車を発売中です</h2>
 
-          <p class="future-note">
-            今後のお知らせも、このページへ順次追加予定です。
-          </p>
-        </article>
+            <p>
+              サイクルショップカンバヤシでは、街中の近距離移動に便利な
+              特定小型原動機付自転車を販売しています。
+            </p>
+
+            <p>
+              現在は、Panasonic「MU」、RICHBIT「RICHBIT CITY」、
+              EVEREST XING「EVEREST XING CITY」などを取り扱っています。
+              車種ごとの乗り心地や操作方法、用途に合った選び方をスタッフがご案内します。
+            </p>
+
+            <div class="news-points">
+              <strong>試乗だけでもお気軽に</strong>
+              購入を決めていない方も試乗していただけます。
+              実際に乗って、サイズ感や操作性、モデルごとの違いをご確認ください。
+            </div>
+
+            <p>
+              販売後の点検・修理・部品交換・メンテナンスにも対応しています。
+              特定小型原動機付自転車をご検討中の方は、電話または店頭でお気軽にご相談ください。
+            </p>
+
+            <a class="button" href="index.html#mobility">特定小型の紹介を見る</a>
+          </article>
+
+          <article class="news-card" id="premium">
+            <span class="article-label">PAYMENT</span>
+            <time class="news-date" datetime="2026-07-15">2026.07.15</time>
+            <h2>大阪市プレミアム付商品券2026をご利用いただけます</h2>
+
+            <p>
+              サイクルショップカンバヤシでは、
+              「大阪市プレミアム付商品券2026」をお支払いにご利用いただけます。
+              自転車の購入や修理などのお支払いにご活用ください。
+            </p>
+
+            <div class="news-points">
+              <strong>利用期間</strong>
+              2026年6月29日（月）から2027年1月15日（金）まで
+            </div>
+
+            <p>
+              大阪市プレミアム付商品券2026は、1口10,000円で13,000円分のお買い物に利用できる商品券です。
+              利用方法や申込条件などの詳細は、公式サイトをご確認ください。
+            </p>
+
+            <a class="official-link"
+               href="https://osaka-city-premium2026.jp/"
+               target="_blank"
+               rel="noopener">
+              大阪市プレミアム付商品券2026 公式サイト
+            </a>
+          </article>
+        </div>
       </div>
     </section>
   </main>
