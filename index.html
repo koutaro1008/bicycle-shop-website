@@ -597,6 +597,68 @@
     }
 
 
+
+    /* News */
+    .news-section {
+      padding: 44px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .news-inner {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .news-title {
+      margin: 0;
+      color: var(--blue);
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .news-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 22px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .news-item:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .news-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .news-content strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.08rem;
+    }
+
+    .news-content p {
+      margin: 0;
+      color: #4b4f56;
+    }
+
     /* Opening message */
     .opening-message {
       padding: 42px 0;
@@ -1277,6 +1339,39 @@
         padding: 54px 0 58px;
       }
 
+      .hero::before {
+        top: 170px;
+        right: -175px;
+        width: 350px;
+        height: 350px;
+        opacity: 0.82;
+      }
+
+      .hero-grid > div:first-child {
+        position: relative;
+        z-index: 5;
+        padding: 22px 18px;
+        border: 1px solid rgba(23, 63, 134, 0.10);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.90);
+        box-shadow: 0 12px 30px rgba(17, 38, 76, 0.08);
+        backdrop-filter: blur(6px);
+      }
+
+      .hero-lead {
+        color: #2f3339;
+      }
+
+      .news-inner,
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .news-section {
+        padding: 34px 0;
+      }
+
       .hero-grid {
         gap: 24px;
       }
@@ -1453,6 +1548,30 @@
           <p data-ja="世代を超えて受け継がれる品質と安心" data-en="Quality and reassurance carried across generations">世代を超えて受け継がれる品質と安心</p>
           <p data-ja="長年の実績が語る、確かな一台" data-en="A dependable bicycle backed by decades of experience">長年の実績が語る、確かな一台</p>
         </div>
+      </div>
+    </section>
+
+    <section class="news-section" aria-labelledby="news-heading">
+      <div class="container news-inner">
+        <h2 class="news-title" id="news-heading">News</h2>
+
+        <ul class="news-list">
+          <li class="news-item">
+            <time class="news-date" datetime="2026-07-15">2026.07.15</time>
+            <div class="news-content">
+              <strong
+                data-ja="公式ホームページをリニューアルしました"
+                data-en="Our official website has been renewed">
+                公式ホームページをリニューアルしました
+              </strong>
+              <p
+                data-ja="独自ドメイン「kanbayashi-cycle.com」を取得し、公式ホームページを新しく公開しました。今後は店舗からのお知らせや取扱商品、サービスに関する情報をこちらからも発信していきます。"
+                data-en="We have launched our renewed official website under the new domain “kanbayashi-cycle.com”. We will use this website to share shop news, product information and service updates.">
+                独自ドメイン「kanbayashi-cycle.com」を取得し、公式ホームページを新しく公開しました。今後は店舗からのお知らせや取扱商品、サービスに関する情報をこちらからも発信していきます。
+              </p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
