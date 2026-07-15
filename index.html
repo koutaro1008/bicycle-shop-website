@@ -1393,8 +1393,8 @@
         </nav>
 
         <div class="language-toggle" aria-label="言語切り替え">
-          <button type="button" id="jaButton" aria-pressed="true">日本語</button>
-          <button type="button" id="enButton" aria-pressed="false">EN</button>
+          <button type="button" id="jaButton" data-ga-event="language_change" data-ga-label="ja" aria-pressed="true">日本語</button>
+          <button type="button" id="enButton" data-ga-event="language_change" data-ga-label="en" aria-pressed="false">EN</button>
         </div>
 
         <button class="menu-button" id="menuButton" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navList">
@@ -1426,8 +1426,8 @@
           </div>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="tel:0663014000" data-ja="電話で相談する" data-en="Call us">電話で相談する</a>
-            <a class="button button-secondary" href="#access" data-ja="店舗へのアクセス" data-en="Get directions">店舗へのアクセス</a>
+            <a class="button button-primary" href="tel:0663014000" data-ga-event="phone_click" data-ga-label="hero_phone" data-ja="電話で相談する" data-en="Call us">電話で相談する</a>
+            <a class="button button-secondary" href="#access" data-ga-event="access_click" data-ga-label="hero_access" data-ja="店舗へのアクセス" data-en="Get directions">店舗へのアクセス</a>
           </div>
         </div>
 
@@ -1768,17 +1768,20 @@
 
             <div class="mobility-actions">
               <a class="button button-primary" href="tel:0663014000"
+                 data-ga-event="test_ride_phone_click" data-ga-label="mobility_test_ride_phone"
                  data-ja="試乗について電話で相談"
                  data-en="Ask about a test ride">
                 試乗について電話で相談
               </a>
               <a class="button button-secondary" href="#access"
+                 data-ga-event="access_click" data-ga-label="mobility_visit_store"
                  data-ja="店舗で実車を見る"
                  data-en="Visit us to see the models">
                 店舗で実車を見る
               </a>
               <a class="button button-secondary"
                  href="https://cycle.panasonic.com/special/tokuteigentsuki/"
+                 data-ga-event="panasonic_details_click" data-ga-label="mobility_panasonic_details"
                  target="_blank"
                  rel="noopener"
                  data-ja="特定小型の詳細はこちら"
@@ -1900,11 +1903,11 @@
                 </div>
                 <div class="info-row">
                   <dt data-ja="電話" data-en="Phone">電話</dt>
-                  <dd><a href="tel:0663014000">06-6301-4000</a></dd>
+                  <dd><a href="tel:0663014000" data-ga-event="phone_click" data-ga-label="store_info_phone">06-6301-4000</a></dd>
                 </div>
                 <div class="info-row">
                   <dt data-ja="メール" data-en="Email">メール</dt>
-                  <dd><a href="mailto:kanbayashi1936@outlook.jp">kanbayashi1936@outlook.jp</a></dd>
+                  <dd><a href="mailto:kanbayashi1936@outlook.jp" data-ga-event="email_click" data-ga-label="store_info_email">kanbayashi1936@outlook.jp</a></dd>
                 </div>
                 <div class="info-row">
                   <dt data-ja="営業時間" data-en="Hours">営業時間</dt>
@@ -1916,6 +1919,7 @@
                     <a href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%82%AB%E3%83%B3%E3%83%90%E3%83%A4%E3%82%B7+%E5%A4%A7%E9%98%AA%E5%B8%82%E6%B7%80%E5%B7%9D%E5%8C%BA%E5%8D%81%E4%B8%89%E6%9C%AC%E7%94%BA1%E4%B8%81%E7%9B%AE12-16"
                        target="_blank"
                        rel="noopener"
+                       data-ga-event="google_maps_click" data-ga-label="holiday_hours_map"
                        data-ja="特別休業は、Googleマップの最新情報をご確認ください。"
                        data-en="For special closures, please check the latest information on Google Maps.">
                       特別休業は、Googleマップの最新情報をご確認ください。
@@ -1936,21 +1940,24 @@
             <div class="link-cards">
               <a class="link-card"
                  href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%82%AB%E3%83%B3%E3%83%90%E3%83%A4%E3%82%B7+%E5%A4%A7%E9%98%AA%E5%B8%82%E6%B7%80%E5%B7%9D%E5%8C%BA%E5%8D%81%E4%B8%89%E6%9C%AC%E7%94%BA1%E4%B8%81%E7%9B%AE12-16"
-                 target="_blank" rel="noopener">
+                 target="_blank" rel="noopener"
+                 data-ga-event="google_maps_click" data-ga-label="access_map">
                 <strong data-ja="Googleマップを開く" data-en="Open Google Maps">Googleマップを開く</strong>
                 <span data-ja="経路や現在地からの距離を確認" data-en="Check directions from your location">経路や現在地からの距離を確認</span>
               </a>
 
               <a class="link-card"
                  href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%82%AB%E3%83%B3%E3%83%90%E3%83%A4%E3%82%B7"
-                 target="_blank" rel="noopener">
+                 target="_blank" rel="noopener"
+                 data-ga-event="google_reviews_click" data-ga-label="google_reviews">
                 <strong data-ja="Googleの口コミを見る" data-en="View Google reviews">Googleの口コミを見る</strong>
                 <span data-ja="店舗情報と口コミを確認" data-en="View store information and reviews">店舗情報と口コミを確認</span>
               </a>
 
               <a class="link-card"
                  href="https://www.instagram.com/kanbayashi13/"
-                 target="_blank" rel="noopener">
+                 target="_blank" rel="noopener"
+                 data-ga-event="instagram_click" data-ga-label="instagram_profile">
                 <strong>Instagram @kanbayashi13</strong>
                 <span data-ja="店舗からの投稿を見る" data-en="See posts from the shop">店舗からの投稿を見る</span>
               </a>
@@ -1982,7 +1989,7 @@
         </div>
 
         <div class="contact-actions">
-          <a class="contact-link" href="tel:0663014000">
+          <a class="contact-link" href="tel:0663014000" data-ga-event="phone_click" data-ga-label="contact_phone">
             <span>
               <small data-ja="電話で問い合わせ" data-en="Call us">電話で問い合わせ</small>
               06-6301-4000
@@ -1990,7 +1997,7 @@
             <span aria-hidden="true">→</span>
           </a>
 
-          <a class="contact-link" href="mailto:kanbayashi1936@outlook.jp">
+          <a class="contact-link" href="mailto:kanbayashi1936@outlook.jp" data-ga-event="email_click" data-ga-label="contact_email">
             <span>
               <small data-ja="メールで問い合わせ" data-en="Email us">メールで問い合わせ</small>
               kanbayashi1936@outlook.jp
@@ -2015,7 +2022,7 @@
     </div>
   </footer>
 
-  <a class="floating-call" href="tel:0663014000" data-ja="電話する" data-en="Call">電話する</a>
+  <a class="floating-call" href="tel:0663014000" data-ga-event="phone_click" data-ga-label="floating_phone" data-ja="電話する" data-en="Call">電話する</a>
 
   <script>
     (() => {
@@ -2041,6 +2048,27 @@
         enButton.setAttribute("aria-pressed", String(!isJapanese));
         localStorage.setItem("kanbayashi-language", language);
       }
+
+      function sendAnalyticsEvent(eventName, parameters = {}) {
+        if (typeof window.gtag !== "function") return;
+
+        window.gtag("event", eventName, {
+          ...parameters,
+          page_location: window.location.href,
+          page_language: document.documentElement.lang || "ja",
+          transport_type: "beacon"
+        });
+      }
+
+      document.querySelectorAll("[data-ga-event]").forEach((element) => {
+        element.addEventListener("click", () => {
+          sendAnalyticsEvent(element.dataset.gaEvent, {
+            button_name: element.dataset.gaLabel || element.textContent.trim(),
+            link_url: element.getAttribute("href") || "",
+            link_text: element.textContent.trim().replace(/\s+/g, " ").slice(0, 100)
+          });
+        });
+      });
 
       jaButton.addEventListener("click", () => setLanguage("ja"));
       enButton.addEventListener("click", () => setLanguage("en"));
