@@ -30,24 +30,18 @@
       --max: 920px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       color: var(--ink);
       background: var(--soft);
-      font-family:
-        -apple-system, BlinkMacSystemFont,
-        "Hiragino Kaku Gothic ProN", "Hiragino Sans",
-        "Yu Gothic", "Meiryo", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
       line-height: 1.85;
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
     .container {
       width: min(calc(100% - 36px), var(--max));
@@ -100,11 +94,7 @@
       padding: 76px 0 56px;
       color: #fff;
       background:
-        radial-gradient(
-          circle at 82% 18%,
-          rgba(255, 255, 255, 0.14),
-          transparent 28%
-        ),
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,0.14), transparent 28%),
         linear-gradient(135deg, var(--blue-dark), var(--blue));
     }
 
@@ -221,6 +211,14 @@
       text-decoration: none;
     }
 
+    .future-note {
+      margin-top: 34px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
     footer {
       padding: 28px 0;
       color: #cdd4df;
@@ -243,7 +241,10 @@
         height: 46px;
       }
 
-      .brand strong,
+      .brand strong {
+        font-size: 0.86rem;
+      }
+
       .back-link {
         font-size: 0.86rem;
       }
@@ -258,24 +259,17 @@
     }
   </style>
 </head>
-
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img
-          src="images/logo-main.png"
-          alt="サイクルショップカンバヤシのロゴ"
-        >
+        <img src="images/logo-main.png" alt="サイクルショップカンバヤシのロゴ">
         <span>
           <strong>サイクルショップカンバヤシ</strong>
           <small>SINCE 1936</small>
         </span>
       </a>
-
-      <a class="back-link" href="index.html">
-        ← トップへ戻る
-      </a>
+      <a class="back-link" href="index.html">← トップへ戻る</a>
     </div>
   </header>
 
@@ -290,17 +284,42 @@
     <section class="news-area">
       <div class="container">
         <div class="news-list">
+          <article class="news-card" id="summer-holiday">
+            <span class="article-label">HOLIDAY</span>
+            <time class="news-date" datetime="2026-07-29">2026.07.29</time>
+            <h2>夏季休暇のお知らせ</h2>
 
-          <!-- 最新ニュース -->
+            <figure class="article-image">
+              <img
+                src="images/summer-holiday-2026.png"
+                alt="夏季休暇のお知らせ。2026年8月13日から8月16日まで休業し、8月17日から通常営業。"
+              >
+            </figure>
+
+            <p>
+              いつもサイクルショップカンバヤシをご利用いただき、
+              誠にありがとうございます。
+            </p>
+
+            <div class="news-points">
+              <strong>夏季休暇期間</strong>
+              2026年8月13日（木）から8月16日（日）まで
+            </div>
+
+            <p>
+              8月17日（月）より通常営業いたします。
+              休業期間中はご不便をおかけしますが、何卒よろしくお願い申し上げます。
+            </p>
+
+            <p>
+              暑い日が続きますので、どうぞご自愛くださいませ。
+            </p>
+          </article>
+
           <article class="news-card" id="panasonic-check">
             <span class="article-label">MAINTENANCE</span>
-            <time class="news-date" datetime="2026-07-28">
-              2026.07.28
-            </time>
-
-            <h2>
-              パナソニック電動アシスト自転車の無料点検を実施中です
-            </h2>
+            <time class="news-date" datetime="2026-07-28">2026.07.28</time>
+            <h2>パナソニック電動アシスト自転車の無料点検を実施中です</h2>
 
             <figure class="article-image">
               <img
@@ -310,126 +329,93 @@
             </figure>
 
             <p>
-              サイクルショップカンバヤシでは、
-              パナソニック製の電動アシスト自転車を対象に、
+              サイクルショップカンバヤシでは、パナソニック製の電動アシスト自転車を対象に、
               無料点検サービスを実施しています。
-              暑い季節も安心してお乗りいただけるよう、
-              この機会に自転車の状態を確認しませんか。
+              暑い季節も安心してお乗りいただけるよう、この機会に自転車の状態を確認しませんか。
             </p>
 
             <div class="news-points">
               <strong>実施期間・ご利用方法</strong>
-              2026年8月31日（月）まで。
-              対象の自転車を店頭へお持ち込みのうえ、
+              2026年8月31日（月）まで。対象の自転車を店頭へお持ち込みのうえ、
               ご来店時にこの画面をご提示ください。
             </div>
 
             <p>
-              点検は無料です。
-              点検の結果、修理や部品交換が必要となった場合の費用は有料です。
+              点検は無料です。点検の結果、修理や部品交換が必要となった場合の費用は有料です。
               また、点検内容は当店所定の項目となります。
             </p>
 
             <p>
-              通勤や買い物、週末のお出かけ前の定期点検として、
-              ぜひご利用ください。
+              通勤や買い物、週末のお出かけ前の定期点検として、ぜひご利用ください。
             </p>
           </article>
 
-          <!-- 過去のニュース1 -->
           <article class="news-card" id="renewal">
             <span class="article-label">WEBSITE</span>
-            <time class="news-date" datetime="2026-07-15">
-              2026.07.15
-            </time>
-
+            <time class="news-date" datetime="2026-07-15">2026.07.15</time>
             <h2>公式ホームページをリニューアルしました</h2>
 
             <p>
-              サイクルショップカンバヤシの公式ホームページを
-              リニューアルし、独自ドメイン
-              「kanbayashi-cycle.com」で新しく公開しました。
+              サイクルショップカンバヤシの公式ホームページをリニューアルし、
+              独自ドメイン「kanbayashi-cycle.com」で新しく公開しました。
             </p>
 
             <p>
               店舗情報や取扱サービスをより分かりやすくお伝えできるよう、
-              自転車販売・修理、出張修理、自転車洗車、
-              レンタサイクル、特定小型モビリティなどの情報を
-              掲載しています。
+              自転車販売・修理、出張修理、自転車洗車、レンタサイクル、
+              特定小型モビリティなどの情報を掲載しています。
             </p>
 
             <div class="news-points">
               <strong>今後掲載する主な情報</strong>
-              入荷情報、新商品のご案内、サービスのお知らせ、
-              店舗からのご案内などを、このページから発信していきます。
+              入荷情報、新商品のご案内、サービスのお知らせ、店舗からのご案内などを、
+              このページから発信していきます。
             </div>
 
             <p>
-              地域の皆さまにとって、
-              より便利で分かりやすい情報源となるよう更新してまいります。
-              今後ともサイクルショップカンバヤシを
-              よろしくお願いいたします。
+              地域の皆さまにとって、より便利で分かりやすい情報源となるよう更新してまいります。
+              今後ともサイクルショップカンバヤシをよろしくお願いいたします。
             </p>
           </article>
 
-          <!-- 過去のニュース2 -->
           <article class="news-card" id="tokutei">
             <span class="article-label">NEW MOBILITY</span>
-            <time class="news-date" datetime="2026-07-15">
-              2026.07.15
-            </time>
-
+            <time class="news-date" datetime="2026-07-15">2026.07.15</time>
             <h2>特定小型原動機付自転車を発売中です</h2>
 
             <p>
-              サイクルショップカンバヤシでは、
-              街中の近距離移動に便利な
+              サイクルショップカンバヤシでは、街中の近距離移動に便利な
               特定小型原動機付自転車を販売しています。
             </p>
 
             <p>
-              現在は、Panasonic「MU」、
-              RICHBIT「RICHBIT CITY」、
-              EVEREST XING「EVEREST XING CITY」などを
-              取り扱っています。
-              車種ごとの乗り心地や操作方法、
-              用途に合った選び方をスタッフがご案内します。
+              現在は、Panasonic「MU」、RICHBIT「RICHBIT CITY」、
+              EVEREST XING「EVEREST XING CITY」などを取り扱っています。
+              車種ごとの乗り心地や操作方法、用途に合った選び方をスタッフがご案内します。
             </p>
 
             <div class="news-points">
               <strong>試乗だけでもお気軽に</strong>
               購入を決めていない方も試乗していただけます。
-              実際に乗って、サイズ感や操作性、
-              モデルごとの違いをご確認ください。
+              実際に乗って、サイズ感や操作性、モデルごとの違いをご確認ください。
             </div>
 
             <p>
-              販売後の点検・修理・部品交換・メンテナンスにも
-              対応しています。
-              特定小型原動機付自転車をご検討中の方は、
-              電話または店頭でお気軽にご相談ください。
+              販売後の点検・修理・部品交換・メンテナンスにも対応しています。
+              特定小型原動機付自転車をご検討中の方は、電話または店頭でお気軽にご相談ください。
             </p>
 
-            <a class="button" href="index.html#mobility">
-              特定小型の紹介を見る
-            </a>
+            <a class="button" href="index.html#mobility">特定小型の紹介を見る</a>
           </article>
 
-          <!-- 過去のニュース3 -->
           <article class="news-card" id="premium">
             <span class="article-label">PAYMENT</span>
-            <time class="news-date" datetime="2026-07-15">
-              2026.07.15
-            </time>
-
-            <h2>
-              大阪市プレミアム付商品券2026をご利用いただけます
-            </h2>
+            <time class="news-date" datetime="2026-07-15">2026.07.15</time>
+            <h2>大阪市プレミアム付商品券2026をご利用いただけます</h2>
 
             <p>
               サイクルショップカンバヤシでは、
-              「大阪市プレミアム付商品券2026」を
-              お支払いにご利用いただけます。
+              「大阪市プレミアム付商品券2026」をお支払いにご利用いただけます。
               自転車の購入や修理などのお支払いにご活用ください。
             </p>
 
@@ -439,22 +425,17 @@
             </div>
 
             <p>
-              大阪市プレミアム付商品券2026は、
-              1口10,000円で13,000円分のお買い物に利用できる商品券です。
-              利用方法や申込条件などの詳細は、
-              公式サイトをご確認ください。
+              大阪市プレミアム付商品券2026は、1口10,000円で13,000円分のお買い物に利用できる商品券です。
+              利用方法や申込条件などの詳細は、公式サイトをご確認ください。
             </p>
 
-            <a
-              class="official-link"
-              href="https://osaka-city-premium2026.jp/"
-              target="_blank"
-              rel="noopener"
-            >
+            <a class="official-link"
+               href="https://osaka-city-premium2026.jp/"
+               target="_blank"
+               rel="noopener">
               大阪市プレミアム付商品券2026 公式サイト
             </a>
           </article>
-
         </div>
       </div>
     </section>
