@@ -1151,6 +1151,41 @@
       font-size: 0.9rem;
     }
 
+    /* Store banners */
+    .store-banners {
+      padding: 54px 0;
+      background: #fff;
+    }
+
+    .store-banner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      gap: 24px;
+    }
+
+    .store-banner-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(17, 38, 76, 0.10);
+    }
+
+    @media (max-width: 680px) {
+      .store-banners {
+        padding: 38px 0;
+      }
+
+      .store-banner-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .store-banner-grid img {
+        border-radius: 14px;
+      }
+    }
+
     /* Contact */
     .contact {
       position: relative;
@@ -2179,6 +2214,13 @@
             </iframe>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="store-banners" aria-label="店舗のお知らせ">
+      <div class="container store-banner-grid">
+        <img src="images/bicycle-security-registration-banner.jpeg" alt="自転車防犯登録と再登録のご案内" loading="lazy">
+        <img src="images/ts-mark-banner.jpg" alt="自転車向け保険付きTSマークのご案内" loading="lazy">
       </div>
     </section>
 
