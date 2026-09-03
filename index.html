@@ -1160,8 +1160,13 @@
     .store-banner-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      align-items: center;
+      align-items: start;
       gap: 24px;
+    }
+
+    .store-banner-item {
+      display: grid;
+      gap: 14px;
     }
 
     .store-banner-grid img {
@@ -1171,6 +1176,19 @@
       box-shadow: 0 10px 28px rgba(17, 38, 76, 0.10);
     }
 
+    .store-banner-link {
+      justify-self: center;
+      color: var(--blue);
+      font-weight: 800;
+      text-align: center;
+      text-underline-offset: 4px;
+    }
+
+    .store-banner-link:hover,
+    .store-banner-link:focus-visible {
+      color: var(--blue-dark);
+    }
+
     @media (max-width: 680px) {
       .store-banners {
         padding: 38px 0;
@@ -1178,11 +1196,15 @@
 
       .store-banner-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 26px;
       }
 
       .store-banner-grid img {
         border-radius: 14px;
+      }
+
+      .store-banner-link {
+        font-size: 0.92rem;
       }
     }
 
@@ -2219,8 +2241,18 @@
 
     <section class="store-banners" aria-label="店舗のお知らせ">
       <div class="container store-banner-grid">
-        <img src="images/bicycle-security-registration-banner.jpeg" alt="自転車防犯登録と再登録のご案内" loading="lazy">
-        <img src="images/ts-mark-banner.jpg" alt="自転車向け保険付きTSマークのご案内" loading="lazy">
+        <div class="store-banner-item">
+          <img src="images/bicycle-security-registration-banner.jpeg" alt="自転車防犯登録と再登録のご案内" loading="lazy">
+          <a class="store-banner-link" href="https://bouhankun.com/" target="_blank" rel="noopener">
+            大阪府自転車商防犯協力会の公式サイト
+          </a>
+        </div>
+        <div class="store-banner-item">
+          <img src="images/ts-mark-banner.jpg" alt="自転車向け保険付きTSマークのご案内" loading="lazy">
+          <a class="store-banner-link" href="https://tmt.or.jp/" target="_blank" rel="noopener">
+            公益財団法人日本交通管理技術協会
+          </a>
+        </div>
       </div>
     </section>
 
