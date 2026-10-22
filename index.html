@@ -1070,6 +1070,132 @@
       border-top: 1px solid var(--line);
     }
 
+    .manufacturer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .manufacturer-card {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(17, 38, 76, 0.05);
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .manufacturer-card:hover,
+    .manufacturer-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: #a7b9d8;
+      box-shadow: var(--shadow);
+    }
+
+    .manufacturer-card:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    .manufacturer-visual {
+      position: relative;
+      display: grid;
+      flex: 0 0 108px;
+      width: 108px;
+      height: 108px;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid #e9eef6;
+      border-radius: 18px;
+      background: var(--blue-light);
+    }
+
+    .manufacturer-fallback {
+      position: absolute;
+      color: #6f89b5;
+      font-size: 2.1rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .manufacturer-visual img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+    }
+
+    .manufacturer-card-body {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .manufacturer-name {
+      color: var(--ink);
+      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+      font-weight: 900;
+      line-height: 1.4;
+    }
+
+    .manufacturer-subtitle {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+    }
+
+    .manufacturer-visit {
+      margin-top: 12px;
+      color: var(--blue);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .manufacturer-visit::after {
+      margin-left: 5px;
+      content: "↗";
+    }
+
+    @media (max-width: 980px) {
+      .manufacturer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .manufacturer-grid {
+        gap: 14px;
+      }
+
+      .manufacturer-card {
+        gap: 16px;
+        padding: 16px;
+        border-radius: 18px;
+      }
+
+      .manufacturer-visual {
+        flex-basis: 82px;
+        width: 82px;
+        height: 82px;
+        border-radius: 14px;
+      }
+
+      .manufacturer-visual img {
+        width: 62px;
+        height: 62px;
+      }
+    }
+
     /* Access */
     .access-grid {
       display: grid;
@@ -2168,10 +2294,100 @@
           <div class="section-number">06</div>
           <div>
             <h2 data-ja="取扱いメーカー" data-en="Brands We Carry">取扱いメーカー</h2>
+            <p data-ja="各メーカーの公式サイトをご案内しています。" data-en="Explore our bicycle makers' official websites.">各メーカーの公式サイトをご案内しています。</p>
           </div>
         </div>
 
-        <div class="manufacturer-grid"></div>
+        <div class="manufacturer-grid">
+          <a class="manufacturer-card" href="https://cycle.panasonic.com/" target="_blank" rel="noopener noreferrer" aria-label="パナソニック 公式サイト（新しいタブで開きます）" data-ga-event="manufacturer_site_click" data-ga-label="cycle.panasonic.com">
+            <div class="manufacturer-visual">
+              <span class="manufacturer-fallback" aria-hidden="true">P</span>
+              <img src="https://www.google.com/s2/favicons?domain=cycle.panasonic.com&amp;sz=128" alt="" width="76" height="76" loading="lazy" decoding="async" onerror="this.hidden=true">
+            </div>
+            <div class="manufacturer-card-body">
+              <span class="manufacturer-name" data-ja="パナソニック" data-en="Panasonic">パナソニック</span>
+              <span class="manufacturer-subtitle">Panasonic</span>
+              <span class="manufacturer-visit" data-ja="公式サイトへ" data-en="Official website">公式サイトへ</span>
+            </div>
+          </a>
+          <a class="manufacturer-card" href="https://www.yamaha-motor.co.jp/pas/" target="_blank" rel="noopener noreferrer" aria-label="ヤマハ発動機 公式サイト（新しいタブで開きます）" data-ga-event="manufacturer_site_click" data-ga-label="www.yamaha-motor.co.jp">
+            <div class="manufacturer-visual">
+              <span class="manufacturer-fallback" aria-hidden="true">Y</span>
+              <img src="https://www.google.com/s2/favicons?domain=www.yamaha-motor.co.jp&amp;sz=128" alt="" width="76" height="76" loading="lazy" decoding="async" onerror="this.hidden=true">
+            </div>
+            <div class="manufacturer-card-body">
+              <span class="manufacturer-name" data-ja="ヤマハ発動機" data-en="Yamaha Motor">ヤマハ発動機</span>
+              <span class="manufacturer-subtitle">YAMAHA PAS</span>
+              <span class="manufacturer-visit" data-ja="公式サイトへ" data-en="Official website">公式サイトへ</span>
+            </div>
+          </a>
+          <a class="manufacturer-card" href="https://www.bscycle.co.jp/" target="_blank" rel="noopener noreferrer" aria-label="ブリヂストンサイクル 公式サイト（新しいタブで開きます）" data-ga-event="manufacturer_site_click" data-ga-label="www.bscycle.co.jp">
+            <div class="manufacturer-visual">
+              <span class="manufacturer-fallback" aria-hidden="true">B</span>
+              <img src="https://www.google.com/s2/favicons?domain=www.bscycle.co.jp&amp;sz=128" alt="" width="76" height="76" loading="lazy" decoding="async" onerror="this.hidden=true">
+            </div>
+            <div class="manufacturer-card-body">
+              <span class="manufacturer-name" data-ja="ブリヂストンサイクル" data-en="Bridgestone Cycle">ブリヂストンサイクル</span>
+              <span class="manufacturer-subtitle">BRIDGESTONE</span>
+              <span class="manufacturer-visit" data-ja="公式サイトへ" data-en="Official website">公式サイトへ</span>
+            </div>
+          </a>
+          <a class="manufacturer-card" href="https://www.maruishi-cycle.com/" target="_blank" rel="noopener noreferrer" aria-label="丸石サイクル 公式サイト（新しいタブで開きます）" data-ga-event="manufacturer_site_click" data-ga-label="www.maruishi-cycle.com">
+            <div class="manufacturer-visual">
+              <span class="manufacturer-fallback" aria-hidden="true">M</span>
+              <img src="https://www.google.com/s2/favicons?domain=www.maruishi-cycle.com&amp;sz=128" alt="" width="76" height="76" loading="lazy" decoding="async" onerror="this.hidden=true">
+            </div>
+            <div class="manufacturer-card-body">
+              <span class="manufacturer-name" data-ja="丸石サイクル" data-en="Maruishi Cycle">丸石サイクル</span>
+              <span class="manufacturer-subtitle">MARUISHI</span>
+              <span class="manufacturer-visit" data-ja="公式サイトへ" data-en="Official website">公式サイトへ</span>
+            </div>
+          </a>
+          <a class="manufacturer-card" href="https://www.asahicycle.co.jp/" target="_blank" rel="noopener noreferrer" aria-label="アサヒサイクル 公式サイト（新しいタブで開きます）" data-ga-event="manufacturer_site_click" data-ga-label="www.asahicycle.co.jp">
+            <div class="manufacturer-visual">
+              <span class="manufacturer-fallback" aria-hidden="true">A</span>
+              <img src="https://www.google.com/s2/favicons?domain=www.asahicycle.co.jp&amp;sz=128" alt="" width="76" height="76" loading="lazy" decoding="async" onerror="this.hidden=true">
+            </div>
+            <div class="manufacturer-card-body">
+              <span class="manufacturer-name" data-ja="アサヒサイクル" data-en="Asahi Cycle">アサヒサイクル</span>
+              <span class="manufacturer-subtitle">ASAHI CYCLE</span>
+              <span class="manufacturer-visit" data-ja="公式サイトへ" data-en="Official website">公式サイトへ</span>
+            </div>
+          </a>
+          <a class="manufacturer-card" href="https://www.welbycycle.com/" target="_blank" rel="noopener noreferrer" aria-label="ウエルビーサイクル 公式サイト（新しいタブで開きます）" data-ga-event="manufacturer_site_click" data-ga-label="www.welbycycle.com">
+            <div class="manufacturer-visual">
+              <span class="manufacturer-fallback" aria-hidden="true">W</span>
+              <img src="https://www.google.com/s2/favicons?domain=www.welbycycle.com&amp;sz=128" alt="" width="76" height="76" loading="lazy" decoding="async" onerror="this.hidden=true">
+            </div>
+            <div class="manufacturer-card-body">
+              <span class="manufacturer-name" data-ja="ウエルビーサイクル" data-en="Welby Cycle">ウエルビーサイクル</span>
+              <span class="manufacturer-subtitle">WELBY</span>
+              <span class="manufacturer-visit" data-ja="公式サイトへ" data-en="Official website">公式サイトへ</span>
+            </div>
+          </a>
+          <a class="manufacturer-card" href="http://tamakoshi.biz/" target="_blank" rel="noopener noreferrer" aria-label="タマコシ 公式サイト（新しいタブで開きます）" data-ga-event="manufacturer_site_click" data-ga-label="tamakoshi.biz">
+            <div class="manufacturer-visual">
+              <span class="manufacturer-fallback" aria-hidden="true">T</span>
+              <img src="https://www.google.com/s2/favicons?domain=tamakoshi.biz&amp;sz=128" alt="" width="76" height="76" loading="lazy" decoding="async" onerror="this.hidden=true">
+            </div>
+            <div class="manufacturer-card-body">
+              <span class="manufacturer-name" data-ja="タマコシ" data-en="Tamakoshi">タマコシ</span>
+              <span class="manufacturer-subtitle">TAMAKOSHI</span>
+              <span class="manufacturer-visit" data-ja="公式サイトへ" data-en="Official website">公式サイトへ</span>
+            </div>
+          </a>
+          <a class="manufacturer-card" href="https://gic-bike.com/" target="_blank" rel="noopener noreferrer" aria-label="ジック 公式サイト（新しいタブで開きます）" data-ga-event="manufacturer_site_click" data-ga-label="gic-bike.com">
+            <div class="manufacturer-visual">
+              <span class="manufacturer-fallback" aria-hidden="true">G</span>
+              <img src="https://www.google.com/s2/favicons?domain=gic-bike.com&amp;sz=128" alt="" width="76" height="76" loading="lazy" decoding="async" onerror="this.hidden=true">
+            </div>
+            <div class="manufacturer-card-body">
+              <span class="manufacturer-name" data-ja="ジック" data-en="GIC">ジック</span>
+              <span class="manufacturer-subtitle">GIC BIKE COLLECTION</span>
+              <span class="manufacturer-visit" data-ja="公式サイトへ" data-en="Official website">公式サイトへ</span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
